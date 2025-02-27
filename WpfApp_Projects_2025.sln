@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorButtonPanel_27.02.25", "ColorButtonPanel_27.02.25\ColorButtonPanel_27.02.25.csproj", "{999C87E7-223B-4DC3-A8F1-A571C303D385}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53DDB0DC-D0AA-497F-BFBA-CEB292E2A459}
+	EndGlobalSection
+EndGlobal
