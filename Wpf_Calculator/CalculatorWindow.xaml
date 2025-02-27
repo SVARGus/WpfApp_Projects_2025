@@ -34,102 +34,106 @@
                 <Setter Property="BorderThickness" Value="1"/>
             </Style>
         </Grid.Resources>
-        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"></TextBox>
-        <TextBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"></TextBox>
-        <Button Grid.Column="0" Grid.Row="2">
+        <Viewbox HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4">
+            <TextBlock x:Name="mathExpression"></TextBlock>
+        </Viewbox>
+        <Viewbox HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+            <TextBlock x:Name="result">0</TextBlock>
+        </Viewbox>
+        <Button x:Name="ButtonClearEntry" Grid.Column="0" Grid.Row="2" Click="ButtonClearEntry_Click">
             <Viewbox>
                 <TextBlock Text="CE" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.Row="2">
+        <Button x:Name="ButtonClear" Grid.Column="1" Grid.Row="2" Click="ButtonClear_Click">
             <Viewbox>
                 <TextBlock Text="C" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="2" Grid.Row="2">
+        <Button x:Name="ButtonBackspace" Grid.Column="2" Grid.Row="2" Click="ButtonBackspace_Click">
             <Viewbox>
                 <TextBlock Text="&lt;" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="3" Grid.Row="2">
+        <Button x:Name="ButtonDivide" Grid.Column="3" Grid.Row="2" Click="ButtonDivide_Click">
             <Viewbox>
                 <TextBlock Text="/" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="0" Grid.Row="3">
+        <Button x:Name="Button7" Grid.Column="0" Grid.Row="3" Click="Button7_Click">
             <Viewbox>
                 <TextBlock Text="7" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.Row="3">
+        <Button x:Name="Button8" Grid.Column="1" Grid.Row="3" Click="Button8_Click">
             <Viewbox>
                 <TextBlock Text="8" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="2" Grid.Row="3">
+        <Button x:Name="Button9" Grid.Column="2" Grid.Row="3" Click="Button9_Click">
             <Viewbox>
                 <TextBlock Text="9" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="3" Grid.Row="3">
+        <Button x:Name="ButtonMultiplication" Grid.Column="3" Grid.Row="3" Click="ButtonMultiplication_Click">
             <Viewbox>
                 <TextBlock Text="*" Margin="1"/>
             </Viewbox>
         </Button>
-        
-        <Button Grid.Column="0" Grid.Row="4">
+
+        <Button x:Name="Button4" Grid.Column="0" Grid.Row="4" Click="Button4_Click">
             <Viewbox>
                 <TextBlock Text="4" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.Row="4">
+        <Button x:Name="Button5" Grid.Column="1" Grid.Row="4" Click="Button5_Click">
             <Viewbox>
                 <TextBlock Text="5" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="2" Grid.Row="4">
+        <Button x:Name="Button6" Grid.Column="2" Grid.Row="4" Click="Button6_Click">
             <Viewbox>
                 <TextBlock Text="6" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="3" Grid.Row="4">
+        <Button x:Name="ButtonMinus" Grid.Column="3" Grid.Row="4" Click="ButtonMinus_Click">
             <Viewbox>
                 <TextBlock Text="-" Margin="1"/>
             </Viewbox>
         </Button>
 
-        <Button Grid.Column="0" Grid.Row="5">
+        <Button x:Name="Button1" Grid.Column="0" Grid.Row="5" Click="Button1_Click">
             <Viewbox>
                 <TextBlock Text="1" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.Row="5">
+        <Button x:Name="Button2" Grid.Column="1" Grid.Row="5" Click="Button2_Click">
             <Viewbox>
                 <TextBlock Text="2" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="2" Grid.Row="5">
+        <Button x:Name="Button3" Grid.Column="2" Grid.Row="5" Click="Button3_Click">
             <Viewbox>
                 <TextBlock Text="3" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="3" Grid.Row="5">
+        <Button x:Name="ButtonPlus" Grid.Column="3" Grid.Row="5" Click="ButtonPlus_Click">
             <Viewbox>
                 <TextBlock Text="+" Margin="1"/>
             </Viewbox>
         </Button>
 
-        <Button Grid.Column="0" Grid.Row="6">
+        <Button x:Name="ButtonFloat" Grid.Column="0" Grid.Row="6" Click="ButtonFloat_Click">
             <Viewbox>
                 <TextBlock Text="." Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.Row="6">
+        <Button x:Name="Button0" Grid.Column="1" Grid.Row="6" Click="Button0_Click">
             <Viewbox>
                 <TextBlock Text="0" Margin="1"/>
             </Viewbox>
         </Button>
-        <Button Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2">
+        <Button x:Name="ButtonEqual" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Click="ButtonEqual_Click">
             <Viewbox>
                 <TextBlock Text="=" Margin="1"/>
             </Viewbox>
