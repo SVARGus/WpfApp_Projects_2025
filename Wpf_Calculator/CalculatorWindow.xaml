@@ -5,8 +5,134 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Calculator"
         mc:Ignorable="d"
-        Title="CalculatorWindow" Height="450" Width="800">
+        Title="CalculatorWindow" MinHeight="375" Height="650" Width="400" MinWidth="200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="25" Height="0.5*"/>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+        </Grid.Resources>
+        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"></TextBox>
+        <Button Grid.Column="0" Grid.Row="2">
+            <Viewbox>
+                <TextBlock Text="CE" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2">
+            <Viewbox>
+                <TextBlock Text="C" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="2">
+            <Viewbox>
+                <TextBlock Text="&lt;" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="2">
+            <Viewbox>
+                <TextBlock Text="/" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="3">
+            <Viewbox>
+                <TextBlock Text="7" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="3">
+            <Viewbox>
+                <TextBlock Text="8" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="3">
+            <Viewbox>
+                <TextBlock Text="9" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="3">
+            <Viewbox>
+                <TextBlock Text="*" Margin="1"/>
+            </Viewbox>
+        </Button>
         
+        <Button Grid.Column="0" Grid.Row="4">
+            <Viewbox>
+                <TextBlock Text="4" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="4">
+            <Viewbox>
+                <TextBlock Text="5" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="4">
+            <Viewbox>
+                <TextBlock Text="6" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="4">
+            <Viewbox>
+                <TextBlock Text="-" Margin="1"/>
+            </Viewbox>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="5">
+            <Viewbox>
+                <TextBlock Text="1" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="5">
+            <Viewbox>
+                <TextBlock Text="2" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="5">
+            <Viewbox>
+                <TextBlock Text="3" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="5">
+            <Viewbox>
+                <TextBlock Text="+" Margin="1"/>
+            </Viewbox>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="6">
+            <Viewbox>
+                <TextBlock Text="." Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="6">
+            <Viewbox>
+                <TextBlock Text="0" Margin="1"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2">
+            <Viewbox>
+                <TextBlock Text="2" Margin="1"/>
+            </Viewbox>
+        </Button>
     </Grid>
 </Window>
