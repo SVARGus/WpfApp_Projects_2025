@@ -34,12 +34,16 @@
                 <Setter Property="BorderThickness" Value="1"/>
             </Style>
         </Grid.Resources>
-        <Viewbox HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4">
-            <TextBlock x:Name="mathExpression"></TextBlock>
-        </Viewbox>
-        <Viewbox HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+        <Border Margin="2" BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4">
+            <Viewbox HorizontalAlignment="Right">
+                <TextBlock x:Name="mathExpression"></TextBlock>
+            </Viewbox>
+        </Border>
+        <Border Margin="2" BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+            <Viewbox HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
             <TextBlock x:Name="result">0</TextBlock>
         </Viewbox>
+        </Border>        
         <Button x:Name="ButtonClearEntry" Grid.Column="0" Grid.Row="2" Click="ButtonClearEntry_Click">
             <Viewbox>
                 <TextBlock Text="CE" Margin="1"/>

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using System.Linq.Expressions;
 
 namespace Wpf_Calculator
 {
@@ -28,91 +29,105 @@ namespace Wpf_Calculator
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("1");
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("2");
         }
 
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("3");
         }
 
         private void Button4_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("4");
         }
 
         private void Button5_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("5");
         }
 
         private void Button6_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("6");
         }
 
         private void Button7_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("7");
         }
 
         private void Button8_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("8");
         }
 
         private void Button9_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("9");
         }
 
         private void Button0_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNum("0");
         }
 
         private void ButtonFloat_Click(object sender, RoutedEventArgs e)
         {
-
+            // необходимо реализовать плавающий знак и защиту от двойной точки
         }
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
-
+            Result();
+            mathExpression.Text = string.Empty;
         }
 
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
         {
-
-        }
+            AddOperator("+");        }
 
         private void ButtonMinus_Click(object sender, RoutedEventArgs e)
         {
-
+            AddOperator("-");
         }
 
         private void ButtonMultiplication_Click(object sender, RoutedEventArgs e)
         {
-
+            AddOperator("*");
         }
 
         private void ButtonDivide_Click(object sender, RoutedEventArgs e)
         {
-            if(Regex.IsMatch(mathExpression.Text, @"[\+\-\*/]"))
-            {
-                string result = mathExpression.Text.Remove(mathExpression.Text.Length - 1) + "/";
-                mathExpression.Text = result;
-            }
+            AddOperator("/");
         }
 
         private void ButtonBackspace_Click(object sender, RoutedEventArgs e)
         {
-
+            string str = mathExpression.Text;
+            char lastChar = str.Length > 0 ? str[str.Length - 1] : '\0';
+            if (lastChar == '.')
+            {
+                mathExpression.Text = str.Remove(str.Length - 1);
+            }
+            // Если последний символ — цифра, добавляем " /"
+            else if (char.IsDigit(lastChar))
+            {
+                mathExpression.Text = str.Remove(str.Length - 1);
+            }
+            str = mathExpression.Text;
+            lastChar = str.Length > 0 ? str[str.Length - 1] : '\0';
+            if (lastChar != '+' && lastChar != '-' && lastChar != '/' && lastChar != '*')
+                Result();
+            else
+                result.Text = "0";
+            if(str.Length == 0)
+                result.Text = "0";
         }
 
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
@@ -123,13 +138,63 @@ namespace Wpf_Calculator
 
         private void ButtonClearEntry_Click(object sender, RoutedEventArgs e)
         {
+            string str = mathExpression.Text;
+            if(string.IsNullOrEmpty(str))
+            {
+                result.Text = "0";
+                return;
+            }
+            string pattern = @"\d+(\.\d+)?$";
+            Match match = Regex.Match(str, pattern);
 
+            if (match.Success)
+            {
+                str = str.Remove(match.Index, match.Length);
+                str = str.TrimEnd();
+                if(str.Length > 0)
+                {
+                    char lastChar = str[str.Length - 1];
+                    if (lastChar == '+' || lastChar == '-' || lastChar == '/' || lastChar == '*')
+                        str = str.Remove(str.Length - 1).TrimEnd();
+                }
+                mathExpression.Text = str;
+            }
+            Result();
         }
         private void Result() // Вычисление суммы
         {
             DataTable dt = new DataTable();
             var res = dt.Compute(mathExpression.Text, "");
             result.Text = res.ToString();
+        }
+        private void AddOperator(string operatorSymbol)
+        {
+            string str = mathExpression.Text;
+            if (string.IsNullOrEmpty(str))
+            {
+                mathExpression.Text = "0" + operatorSymbol;
+                return;
+            }
+            char lastChar = str.Length > 0 ? str[str.Length - 1] : '\0';
+            if (lastChar == '+' || lastChar == '-' || lastChar == '/' || lastChar == '*')
+                mathExpression.Text = str.Remove(str.Length - 1) + operatorSymbol;
+            else if (lastChar == '.')
+                mathExpression.Text = str.Remove(str.Length - 1) + operatorSymbol;
+            else if (char.IsDigit(lastChar))
+                mathExpression.Text += operatorSymbol;
+        }
+        private void AddNum(string operatorNum)
+        {
+            try
+            {
+                string str = mathExpression.Text;
+                mathExpression.Text += operatorNum;
+                Result();
+            }
+            catch
+            {
+                result.Text = "0";
+            }
         }
     }
 }
