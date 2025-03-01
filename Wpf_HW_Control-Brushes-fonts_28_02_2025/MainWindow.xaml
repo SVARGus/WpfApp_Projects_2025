@@ -17,13 +17,13 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" BorderBrush="OrangeRed" BorderThickness="2" CornerRadius="15">
-                <TextBlock x:Name="testText" Text="Просто текст для теста" FontSize="30" FontFamily="Times New Roman" 
+            <Border x:Name="testText" Grid.Row="0" BorderBrush="OrangeRed" BorderThickness="2" CornerRadius="15">
+                <TextBlock Text="Просто текст для теста" FontSize="30" FontFamily="Times New Roman" 
                            FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <ScrollViewer Grid.Row="1" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" VerticalScrollBarVisibility="Hidden">
                 <StackPanel>
-                    <GroupBox Padding="10, 5" BorderBrush="LawnGreen" BorderThickness="2">
+                    <GroupBox Padding="10, 5" BorderBrush="LawnGreen" BorderThickness="2" Margin="0, 10">
                         <GroupBox.Header>
                             <TextBlock Text="Цвет фона"/>
                         </GroupBox.Header>
@@ -35,7 +35,7 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
+                            <Grid Grid.Row="0" Margin="0, 5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition/>
@@ -46,11 +46,11 @@
                                         <RowDefinition/>
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
-                                    <Slider x:Name="ARGBaSlider" Value="5" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <Slider x:Name="ARGBaSlider" Value="0" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="ARGB_Slider_ValueChanged_Background"/>
                                     <TextBlock x:Name="ARGBaValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
                                 </Grid>
                             </Grid>
-                            <Grid Grid.Row="1">
+                            <Grid Grid.Row="1" Margin="0, 5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition/>
@@ -61,11 +61,11 @@
                                         <RowDefinition/>
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
-                                    <Slider x:Name="ARGBrSlider" Value="5" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <Slider x:Name="ARGBrSlider" Value="0" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="ARGB_Slider_ValueChanged_Background"/>
                                     <TextBlock x:Name="ARGBrValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
                                 </Grid>
                             </Grid>
-                            <Grid Grid.Row="2">
+                            <Grid Grid.Row="2" Margin="0, 5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition/>
@@ -76,11 +76,11 @@
                                         <RowDefinition/>
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
-                                    <Slider x:Name="ARGBgSlider" Value="5" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <Slider x:Name="ARGBgSlider" Value="0" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="ARGB_Slider_ValueChanged_Background"/>
                                     <TextBlock x:Name="ARGBgValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
                                 </Grid>
                             </Grid>
-                            <Grid Grid.Row="3">
+                            <Grid Grid.Row="3" Margin="0, 5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition/>
@@ -91,11 +91,11 @@
                                         <RowDefinition/>
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
-                                    <Slider x:Name="ARGBbSlider" Value="5" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <Slider x:Name="ARGBbSlider" Value="0" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="ARGB_Slider_ValueChanged_Background"/>
                                     <TextBlock x:Name="ARGBbValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
                                 </Grid>
                             </Grid>
-                            <Grid Grid.Row="4">
+                            <Grid Grid.Row="4" Margin="0, 5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition MinWidth="25" Width="0.5*"/>
                                     <ColumnDefinition Width="3*"/>
@@ -143,7 +143,7 @@
                             </Grid>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Padding="10, 5" BorderBrush="LawnGreen" BorderThickness="2">
+                    <GroupBox Padding="10, 5" BorderBrush="LawnGreen" BorderThickness="2" Margin="0, 10">
                         <GroupBox.Header>
                             <TextBlock Text="Шрифт"/>
                         </GroupBox.Header>
@@ -166,6 +166,117 @@
                             <Button Grid.Column="1" Margin="5" Grid.Row="1" FontFamily="Candara">Candara</Button>
                             <Button Grid.Column="2" Margin="5" Grid.Row="1" FontFamily="GENISO">GENISO</Button>
                             <Button Grid.Column="3" Margin="5" Grid.Row="1" FontFamily="Garamond">Garamond</Button>
+                        </Grid>
+                    </GroupBox>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Padding="10, 20, 0, 0">Размер текста:</TextBlock>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Slider x:Name="FontSizeSlider" Value="1" Minimum="1" Maximum="255" IsSnapToTickEnabled="True" Margin="10"/>
+                            <TextBlock x:Name="FontSizeValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+                        </Grid>
+                    </Grid>
+                    <GroupBox Padding="10, 5" BorderBrush="LawnGreen" BorderThickness="2" Margin="0, 10">
+                        <GroupBox.Header>
+                            <TextBlock Text="Стиль текста"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Column="0" Margin="5" Grid.Row="0" FontWeight="Bold">Bold</Button>
+                            <Button Grid.Column="1" Margin="5" Grid.Row="0" FontWeight="Medium">Medium</Button>
+                            <Button Grid.Column="2" Margin="5" Grid.Row="0" FontWeight="Light">Light</Button>
+                            <Button Grid.Column="0" Margin="5" Grid.Row="1" FontWeight="Normal">Normal</Button>
+                            <Button Grid.Column="1" Margin="5" Grid.Row="1" FontWeight="Thin">Thin</Button>
+                            <Button Grid.Column="2" Margin="5" Grid.Row="1" FontWeight="Regular">Regular</Button>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Padding="10, 5" BorderBrush="LawnGreen" BorderThickness="2" Margin="0, 10, 0 ,30">
+                        <GroupBox.Header>
+                            <TextBlock Text="Цвет текста"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Margin="0, 5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0">A:</TextBlock>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Slider x:Name="ARGBaColorTextSlider" Value="1" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <TextBlock x:Name="ARGBaColorTextValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="1" Margin="0, 5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0">R:</TextBlock>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Slider x:Name="ARGBrColorTextSlider" Value="1" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <TextBlock x:Name="ARGBrColorTextValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="2" Margin="0, 5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0">G:</TextBlock>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Slider x:Name="ARGBgColorTextSlider" Value="1" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <TextBlock x:Name="ARGBgColorTextValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="3" Margin="0, 5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0">B:</TextBlock>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Slider x:Name="ARGBbColorTextSlider" Value="1" Minimum="1" Maximum="255" IsSnapToTickEnabled="True"/>
+                                    <TextBlock x:Name="ARGBbColorTextValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </GroupBox>
                 </StackPanel>
