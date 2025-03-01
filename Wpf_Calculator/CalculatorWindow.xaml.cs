@@ -38,13 +38,36 @@ namespace Wpf_Calculator
 
         private void ButtonFloat_Click(object sender, RoutedEventArgs e)
         {
-            // необходимо реализовать плавающий знак и защиту от двойной точки
+            string str = mathExpression.Text;
+            if(string.IsNullOrEmpty(str))
+            {
+                mathExpression.Text = "0.";
+                return;
+            }
+            string number = @"\d+(\.\d+)?$";
+            Match match = Regex.Match(str, number);
+            if(match.Success)
+            {
+                string lastNumber = match.Value;
+                if (!lastNumber.Contains("."))
+                {
+                    mathExpression.Text += ".";
+                }
+            }
+            else
+            {
+                char lastChar = str[str.Length - 1];
+                if(lastChar == '+' || lastChar == '-' || lastChar == '/' || lastChar == '*')
+                {
+                    mathExpression.Text += "0.";
+                }
+            }
         }
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
             Result();
-            mathExpression.Text = string.Empty;
+            mathExpression.Text = result.Text.Replace(',', '.');
         }
 
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
