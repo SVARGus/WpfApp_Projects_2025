@@ -1,0 +1,9 @@
+﻿<Application x:Class="Wpf_HW_Control_Brushes_fonts_28_02_2025.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Wpf_HW_Control_Brushes_fonts_28_02_2025"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
