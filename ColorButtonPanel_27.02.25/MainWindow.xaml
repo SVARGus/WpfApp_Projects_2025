@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ColorButtonPanel_27._02._25"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="300">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Grid.Column="0">
+            <Button Margin="2" FontSize="15" Foreground="#FFFF0000">Read</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FF00FF00">Green</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FF0000FF">Blue</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FFFFFF00">Yellow</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FF00FFFF">Cyan</Button>
+
+            <Button Margin="2" FontSize="15" Foreground="#FFFF00FF">Magenta</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FFFFA500">Orange</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FF800080">Purple</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FFFFC0CB">Pink</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FFA52A2A">Brown</Button>
+
+            <Button Margin="2" FontSize="15" Foreground="#FF808080">Gray</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FF000000">Black</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FFFFFFFF">White</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FF008080">Teal</Button>
+            <Button Margin="2" FontSize="15" Foreground="#FFFFD700">Gold</Button>
+        </WrapPanel>
     </Grid>
+    
 </Window>
