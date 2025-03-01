@@ -39,11 +39,11 @@
                     </Style>
                 </GroupBox.Style>
                 <WrapPanel HorizontalAlignment="Center">
-                    <RadioButton Margin="20,0,0,0">Крош</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Ёжик</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Барашь</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Совунья</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Лосяшь</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_1">Пин</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_1">Ёжик</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_1">Бараш</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_1">Совунья</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_1">Лосяш</RadioButton>
                 </WrapPanel>
             </GroupBox>
             <Label HorizontalAlignment="Center">Кто из смешариков любит приключения?</Label>
@@ -55,11 +55,11 @@
                     </Style>
                 </GroupBox.Style>
                 <WrapPanel HorizontalAlignment="Center">
-                    <RadioButton Margin="20,0,0,0">Крош</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Ёжик</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Барашь</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Совунья</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Лосяшь</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_2">Крош</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_2">Ёжик</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_2">Бараш</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_2">Совунья</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_2">Кар-Карыч</RadioButton>
                 </WrapPanel>
             </GroupBox>
             <Label HorizontalAlignment="Center">Какой смешарик всегда готов помочь?</Label>
@@ -71,11 +71,11 @@
                     </Style>
                 </GroupBox.Style>
                 <WrapPanel HorizontalAlignment="Center">
-                    <RadioButton Margin="20,0,0,0">Крош</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Ёжик</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Барашь</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Совунья</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Лосяшь</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_3">Крош</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_3">Копатыч</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_3">Бараш</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_3">Пин</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_3">Лосяш</RadioButton>
                 </WrapPanel>
             </GroupBox>
             <Label HorizontalAlignment="Center">Кто из смешариков любит петь?</Label>
@@ -87,11 +87,11 @@
                     </Style>
                 </GroupBox.Style>
                 <WrapPanel HorizontalAlignment="Center">
-                    <RadioButton Margin="20,0,0,0">Крош</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Ёжик</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Барашь</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Совунья</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Лосяшь</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_4">Крош</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_4">Ёжик</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_4">Бараш</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_4">Нюша</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_4">Лосяш</RadioButton>
                 </WrapPanel>
             </GroupBox>
             <Label HorizontalAlignment="Center">Какой смешарик всегда заботится о здоровье?</Label>
@@ -103,14 +103,14 @@
                     </Style>
                 </GroupBox.Style>
                 <WrapPanel HorizontalAlignment="Center">
-                    <RadioButton Margin="20,0,0,0">Крош</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Ёжик</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Барашь</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Совунья</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Лосяшь</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_5">Крош</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_5">Ёжик</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_5">Бараш</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_5">Совунья</RadioButton>
+                    <RadioButton Margin="20,0,0,0" Checked="RadioButton_Checked_5">Лосяш</RadioButton>
                 </WrapPanel>
             </GroupBox>
-            <Button MaxWidth="300" Margin="20,0">Сдать тест</Button>
+            <Button MaxWidth="300" Margin="20,0" Click="Button_Click">Сдать тест</Button>
         </StackPanel>
     </Grid>
 
