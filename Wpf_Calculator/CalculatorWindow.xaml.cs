@@ -27,54 +27,13 @@ namespace Wpf_Calculator
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_Num(object sender, RoutedEventArgs e)
         {
-            AddNum("1");
-        }
-
-        private void Button2_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("2");
-        }
-
-        private void Button3_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("3");
-        }
-
-        private void Button4_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("4");
-        }
-
-        private void Button5_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("5");
-        }
-
-        private void Button6_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("6");
-        }
-
-        private void Button7_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("7");
-        }
-
-        private void Button8_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("8");
-        }
-
-        private void Button9_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("9");
-        }
-
-        private void Button0_Click(object sender, RoutedEventArgs e)
-        {
-            AddNum("0");
+            Button button = sender as Button;
+            Viewbox viewbox = button.Content as Viewbox;
+            TextBlock textBlock = viewbox.Child as TextBlock;
+            string number = textBlock.Text;
+            AddNum(number);
         }
 
         private void ButtonFloat_Click(object sender, RoutedEventArgs e)
