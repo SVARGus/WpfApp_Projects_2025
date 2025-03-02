@@ -129,5 +129,43 @@ namespace Wpf_HW_Control_Brushes_fonts_28_02_2025
                 testTextTB.FontWeight = select.FontWeight;
             }
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string backgroundColor = ((BackgroundComboBox.SelectedItem as Grid).Children[0] as Label).Background.ToString();
+            SetColorTextSlider(backgroundColor);
+        }
+
+        private void setARGB_Click(object sender, RoutedEventArgs e)
+        {
+            SetColorTextSlider(selectARGB.Text);
+        }
+        private void SetColorTextSlider(string backgroundColor)
+        {
+            if(!string.IsNullOrEmpty(backgroundColor) && backgroundColor.StartsWith("#") && backgroundColor.Length == 9)
+            {
+                try
+                {
+                    string hexColor = backgroundColor.Substring(1);
+                    byte a = Convert.ToByte(hexColor.Substring(0, 2), 16);
+                    byte r = Convert.ToByte(hexColor.Substring(2, 2), 16);
+                    byte g = Convert.ToByte(hexColor.Substring(4, 2), 16);
+                    byte b = Convert.ToByte(hexColor.Substring(6, 2), 16);
+                    Color newBackgroundColor = Color.FromArgb(a, r, g, b);
+                    testText.Background = new SolidColorBrush(newBackgroundColor);
+                    selectARGB.Text = testText.Background.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при парсинге цвета: {ex.Message}");
+                }
+            }
+            // Можно добавить парсинг других форматов: RGB кодировка (#RRGGBB), строка является именованным цветом, RGB в формате строки (rgb(255, 0, 0))
+            // Но в рамках учебного проекта другие форматы будут опущены
+            else
+            {
+                MessageBox.Show("Не корректный формат цвета");
+            }
+        }
     }
 }

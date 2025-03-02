@@ -105,8 +105,8 @@
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-10, 0, 0, 0">HEX</TextBlock>
                                 <TextBox Grid.Column="1" x:Name="selectARGB"/>
-                                <Button Grid.Column="2" x:Name="setARGB">+</Button>
-                                <ComboBox Grid.Column="4" Margin="0, 0, -10, 0">
+                                <Button Grid.Column="2" x:Name="setARGB" Height="23" VerticalAlignment="Top" Click="setARGB_Click">+</Button>
+                                <ComboBox x:Name="BackgroundComboBox" Grid.Column="4" Margin="0, 0, -10, 0" SelectionChanged="ComboBox_SelectionChanged">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition/>
