@@ -55,6 +55,7 @@ namespace Wpf_HW_Control_Brushes_fonts_28_02_2025
             }
             UpdateBackgroundColor();
         }
+
         private void UpdateBackgroundColor() // Обновление цвета фона после изменений
         {
             byte a = (byte)ARGBaSlider.Value;
@@ -64,6 +65,69 @@ namespace Wpf_HW_Control_Brushes_fonts_28_02_2025
             Color backgroundColor = Color.FromArgb(a, r, g, b);
             testText.Background = new SolidColorBrush(backgroundColor);
             selectARGB.Text = testText.Background.ToString();
+        }
+
+        private void FontSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider select = sender as Slider;
+            if(select != null && FontSizeValue != null)
+            {
+                FontSizeValue.Text = select.Value.ToString();
+                testTextTB.FontSize = select.Value;
+            }
+        }
+
+        private void ARGBColorTextSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider select = sender as Slider;
+            if (select != null)
+            {
+                if (select.Name == "ARGBaColorTextSlider" && ARGBaColorTextValue != null)
+                {
+                    ARGBaColorTextValue.Text = select.Value.ToString();
+                }
+                else if(select.Name == "ARGBrColorTextSlider" && ARGBrColorTextValue != null)
+                {
+                    ARGBrColorTextValue.Text = select.Value.ToString();
+                }
+                else if (select.Name == "ARGBgColorTextSlider" && ARGBgColorTextValue != null)
+                {
+                    ARGBgColorTextValue.Text = select.Value.ToString();
+                }
+                else if (select.Name == "ARGBbColorTextSlider" && ARGBbColorTextValue != null)
+                {
+                    ARGBbColorTextValue.Text = select.Value.ToString();
+                }
+            }
+            UpdateForeground();
+        }
+
+        private void UpdateForeground()
+        {
+            byte a = (byte)ARGBaColorTextSlider.Value;
+            byte r = (byte)ARGBrColorTextSlider.Value;
+            byte g = (byte)ARGBgColorTextSlider.Value;
+            byte b = (byte)ARGBbColorTextSlider.Value;
+            Color fontColor = Color.FromArgb(a, r, g, b);
+            testTextTB.Foreground = new SolidColorBrush(fontColor);
+        }
+
+        private void Button_Click_FontFamily(object sender, RoutedEventArgs e)
+        {
+            Button select = sender as Button;
+            if(select != null)
+            {
+                testTextTB.FontFamily = new FontFamily(select.Content.ToString());
+            }
+        }
+
+        private void Button_Click_FontWeight(object sender, RoutedEventArgs e)
+        {
+            Button select = sender as Button;
+            if (select != null)
+            {
+                testTextTB.FontWeight = select.FontWeight;
+            }
         }
     }
 }
