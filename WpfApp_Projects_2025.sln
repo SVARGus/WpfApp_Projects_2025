@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_CW_21_02_25_Pictures", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_HW_Control-Brushes-fonts_28_02_2025", "Wpf_HW_Control-Brushes-fonts_28_02_2025\Wpf_HW_Control-Brushes-fonts_28_02_2025.csproj", "{72477A68-223C-453C-BBB4-6F95DD599E7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_Keyboard_Trainer", "Wpf_Keyboard_Trainer\Wpf_Keyboard_Trainer.csproj", "{E08B9FE1-7B41-453A-B592-B175F15A1974}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{72477A68-223C-453C-BBB4-6F95DD599E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72477A68-223C-453C-BBB4-6F95DD599E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72477A68-223C-453C-BBB4-6F95DD599E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08B9FE1-7B41-453A-B592-B175F15A1974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08B9FE1-7B41-453A-B592-B175F15A1974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08B9FE1-7B41-453A-B592-B175F15A1974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08B9FE1-7B41-453A-B592-B175F15A1974}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
