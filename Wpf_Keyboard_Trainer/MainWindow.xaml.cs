@@ -27,6 +27,39 @@ namespace Wpf_Keyboard_Trainer
 
         private void SliderDifficulty_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            Slider select = sender as Slider;
+            if(select != null)
+            {
+                ValueDifficulty.Text = select.Value.ToString();
+            }
+        }
+
+        private string GenerateMixedCaseString(int length) // Генератор строки для ввода в верхнем и нижнем регистре
+        {
+            const string chars = "`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./";
+            const string charsMix = "`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./QWERTYUIOPASDFGHJKLZXCVBNM";
+            Random random = new Random();
+            if(CaseSensetive.IsChecked == true) // Если нужно учитывать регистр
+            {
+                return new string(Enumerable.Repeat(charsMix, length)
+                    .Select(s => s[random.Next(s.Length)])
+                    .ToArray());
+            }
+            else
+            {
+                return new string(Enumerable.Repeat(chars, length)
+                    .Select(s => s[random.Next(s.Length)])
+                    .ToArray());
+            }
+        }
+
+        private void Start_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Stop_Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
