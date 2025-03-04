@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Keyboard_Trainer"
         mc:Ignorable="d"
-        Title="Keyboard Trainer" Height="420" Width="1000" ResizeMode="NoResize" SizeToContent="Manual">
+        Title="Keyboard Trainer" Height="420" Width="842" ResizeMode="NoResize" SizeToContent="Manual">
     <Grid x:Name="MainFrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -62,27 +62,192 @@
         <StackPanel Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="R"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="`" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="1" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="2" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0"  BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="3" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="4" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="5" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="6" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="7" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="8" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="9" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="0" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="-" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="=" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="106" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Backspace" FontWeight="Bold"/>
                 </Border>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
+                <Border CornerRadius="10" Width="78" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Tab" FontWeight="Bold"/>
+                </Border>
                 <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="R"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="q" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="w" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="e" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="r" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="t" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="y" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="u" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="i" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="o" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="p" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="[" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="]" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="78" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="\" FontWeight="Bold"/>
                 </Border>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
+                <Border CornerRadius="10" Width="106" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Caps Lock" FontWeight="Bold"/>
+                </Border>
                 <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="R"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="a" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="s" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="d" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="f" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="g" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="h" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="j" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="k" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="l" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text=";" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="'" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="106" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Enter" FontWeight="Bold"/>
                 </Border>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
+                <Border CornerRadius="10" Width="134" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Shift" FontWeight="Bold"/>
+                </Border>
                 <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="R"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="z" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="x" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="c" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="v" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#ABDAE6" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="b" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="n" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F289F0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="m" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="," FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#F8FBD0" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="." FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="#90ED96" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="/" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="134" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Shift" FontWeight="Bold"/>
                 </Border>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="R"/>
+                <Border CornerRadius="10" Width="68" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Ctr" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="68" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Win" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="68" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Alt" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="390" Height="50" Margin="3" Background="#FFA07A" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Space" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="68" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Alt" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="68" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Win" FontWeight="Bold"/>
+                </Border>
+                <Border CornerRadius="10" Width="68" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Ctr" FontWeight="Bold"/>
                 </Border>
             </StackPanel>
         </StackPanel>

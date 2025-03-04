@@ -24,5 +24,10 @@ namespace Wpf_Keyboard_Trainer
         {
             InitializeComponent();
         }
+
+        private void SliderDifficulty_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }
