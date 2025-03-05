@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,12 @@ namespace Wpf_Keyboard_Trainer
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Stopwatch _stopwatch; // время потраченное на ввод текста
+        int failureInputText = 0; // подсчет ошибок при вводе текста
         public MainWindow()
         {
             InitializeComponent();
+            _stopwatch = new Stopwatch();
         }
 
         private void SliderDifficulty_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -55,12 +59,24 @@ namespace Wpf_Keyboard_Trainer
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            InputText.Text = string.Empty;
+            InputText.IsEnabled = true;
+            btStart.IsEnabled = false;
+            btStop.IsEnabled = true;
+            TextValue.Text = GenerateMixedCaseString(int.Parse(ValueDifficulty.Text));
+            _stopwatch.Start();
         }
 
         private void Stop_Button_Click(object sender, RoutedEventArgs e)
         {
+            _stopwatch.Stop();
 
+            InputText.IsEnabled = false;
+            btStart.IsEnabled = true;
+            btStop.IsEnabled = false;
+            TimeSpan elapsetTime = _stopwatch.Elapsed;
+            double speed = (double.Parse(ValueDifficulty.Text) / elapsetTime.TotalSeconds) * 60;
+            CountSpeed.Text = speed.ToString("F2");
         }
     }
 }

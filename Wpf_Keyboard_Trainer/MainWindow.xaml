@@ -44,16 +44,16 @@
                 <Slider x:Name="SliderDifficulty" Grid.Column="1" VerticalAlignment="Center" Value="15" Maximum="100" Minimum="5" IsSnapToTickEnabled="True" ValueChanged="SliderDifficulty_ValueChanged"/>
             </Grid>
             <CheckBox x:Name="CaseSensetive" Grid.Column="3" Grid.Row="0" Content="Case Sensetive" Margin="5" VerticalAlignment="Center"/>
-            <Button Grid.Column="2" Grid.Row="1" Margin="4" Content="Start" Click="Start_Button_Click"/>
-            <Button Grid.Column="3" Grid.Row="1" Margin="4" Content="Stop" Click="Stop_Button_Click"/>
+            <Button x:Name="btStart" Grid.Column="2" Grid.Row="1" Margin="4" Content="Start" Click="Start_Button_Click"/>
+            <Button x:Name="btStop" Grid.Column="3" Grid.Row="1" Margin="4" Content="Stop" Click="Stop_Button_Click" IsEnabled="False"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBox x:Name="TextValue" Grid.Row="0" Margin="0,2,0,2" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23"/>
-            <TextBox x:Name="InputText" Grid.Row="1" Margin="0,2,0,2" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23"/>
+            <TextBox x:Name="TextValue" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>
+            <TextBox x:Name="InputText" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>
         </Grid>
         <StackPanel Grid.Row="2">
             <StackPanel Orientation="Horizontal">
