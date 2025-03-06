@@ -56,7 +56,8 @@
                 <RichTextBox x:Name="TextValue" VerticalAlignment="Center" Height="23" FontSize="16" MaxWidth="825" HorizontalAlignment="Stretch" IsReadOnly="True"/>
             </Border>
             <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5, 2" > <!--В место TextBox-->
-                <RichTextBox x:Name="InputText" VerticalAlignment="Center" Height="23" FontSize="16" MaxWidth="825" HorizontalAlignment="Stretch" IsReadOnly="True"/>
+                <RichTextBox x:Name="InputText" VerticalAlignment="Center" Height="23" FontSize="16" MaxWidth="825" 
+                             HorizontalAlignment="Stretch" IsReadOnly="True" KeyUp="VvodText_KeyUp" KeyDown="VvodText_KeyDown"/>
             </Border>
             <!--<TextBox x:Name="TextValue" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>-->
             <!--<TextBox x:Name="InputText" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>-->

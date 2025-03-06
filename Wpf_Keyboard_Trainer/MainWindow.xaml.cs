@@ -68,6 +68,8 @@ namespace Wpf_Keyboard_Trainer
             string str = GenerateMixedCaseString(int.Parse(ValueDifficulty.Text));
             TextValue.Document.Blocks.Clear();
             TextValue.Document.Blocks.Add(new Paragraph(new Run(str)));
+            InputText.Focusable = true;
+            InputText.Focus();
             _stopwatch.Start();
         }
 
@@ -88,7 +90,7 @@ namespace Wpf_Keyboard_Trainer
             if (ButtonDictionary.TryGetValue(e.Key.ToString(), out var button))
             {
                 button.Border.Background = new SolidColorBrush(button.Color);
-                if (e.Key == Key.LeftShift)
+                if (e.Key == Key.LeftShift || e.Key == Key.RightShift)
                 {
                     ButtonDown();
                 }
@@ -124,13 +126,24 @@ namespace Wpf_Keyboard_Trainer
                     case Key.CapsLock:
                         ToggleCapsLock(); // Метод индикации нажатия CapsLock
                         break;
+                    case Key.Tab:
+                    case Key.LeftCtrl:
+                    case Key.RightCtrl:
+                    case Key.LeftAlt:
+                    case Key.RightAlt:
+                    case Key.Enter:
+                        button.Border.Background = Brushes.Red;
+                        return;
                     default:
                         newText = button.TextBlock.Text;
                         break;
                 }
-                InsertTextAtCaret(InputText, newText); // Метод вставки символа в строку
-                CompareTexts(); // Метод Обновления сравнения
-                button.Border.Background = Brushes.LightGray;
+                if(!string.IsNullOrEmpty(newText))
+                {
+                    InsertTextAtCaret(InputText, newText); // Метод вставки символа в строку
+                    CompareTexts(); // Метод Обновления сравнения
+                }
+                button.Border.Background = Brushes.Red;
             }
         }
         private void ButtonUp()
@@ -159,7 +172,53 @@ namespace Wpf_Keyboard_Trainer
                             ButtonDictionary.Add(myButton.BigValue, myButton);
                         }
                         else
-                            ButtonDictionary.Add("LeftShift", myButton); // переделать
+                        {
+                            switch (myButton.SmallValue)
+                            {
+                                case "Shift":
+                                    if (ButtonDictionary.ContainsKey("LeftShift"))
+                                        ButtonDictionary.Add("RightShift", myButton);
+                                    else
+                                        ButtonDictionary.Add("LeftShift", myButton);
+                                    break;
+                                case "CapsLock":
+                                    ButtonDictionary.Add("CapsLock", myButton);
+                                    break;
+                                case "Backspace":
+                                    ButtonDictionary.Add("Back", myButton);
+                                    break;
+                                case "Enter":
+                                    ButtonDictionary.Add("Enter", myButton);
+                                    break;
+                                case "Alt":
+                                    if (ButtonDictionary.ContainsKey("LeftAlt"))
+                                        ButtonDictionary.Add("RightAlt", myButton);
+                                    else
+                                        ButtonDictionary.Add("LeftAlt", myButton);
+                                    break;
+                                case "Ctrl":
+                                    if (ButtonDictionary.ContainsKey("LeftCtrl"))
+                                        ButtonDictionary.Add("RightCtrl", myButton);
+                                    else
+                                        ButtonDictionary.Add("LeftCtrl", myButton);
+                                    break;
+                                case "Win":
+                                    if (ButtonDictionary.ContainsKey("LeftWin"))
+                                        ButtonDictionary.Add("RightWin", myButton);
+                                    else
+                                        ButtonDictionary.Add("LeftWin", myButton);
+                                    break;
+                                case "Tab":
+                                    ButtonDictionary.Add("Tab", myButton);
+                                    break;
+                                case "Space":
+                                    ButtonDictionary.Add("Space", myButton);
+                                    break;
+                                default:
+                                    //ButtonDictionary.Add(myButton.SmallValue, myButton);
+                                    break;
+                            }
+                        }    
                     }
                 }
                 else
@@ -181,6 +240,8 @@ namespace Wpf_Keyboard_Trainer
 
         private void InsertTextAtCaret(RichTextBox richTextBox, string text) // Метод вставки символа в строку
         {
+            if (string.IsNullOrEmpty(text))
+                return;
             TextPointer caretPosition = richTextBox.CaretPosition;
             richTextBox.CaretPosition.InsertTextInRun(text);
             richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset(text.Length, LogicalDirection.Forward);
@@ -240,7 +301,7 @@ namespace Wpf_Keyboard_Trainer
         private void ResetFormatting(RichTextBox rtb) // сброс окрашивания
         {
             new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd)
-                .ApplyPropertyValue(TextElement.BackgroundProperty, DependencyProperty.UnsetValue);
+                .ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Transparent);
         }
     }
 }
