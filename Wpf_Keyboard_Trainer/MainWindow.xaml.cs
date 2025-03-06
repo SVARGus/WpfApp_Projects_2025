@@ -21,7 +21,9 @@ namespace Wpf_Keyboard_Trainer
     {
         Dictionary<string, MyButton> ButtonDictionary = new Dictionary<string, MyButton>();
         private Stopwatch _stopwatch; // время потраченное на ввод текста
-        int failureInputText = 0; // подсчет ошибок при вводе текста
+        private int failureInputText = 0; // подсчет ошибок при вводе текста
+        private bool isCapsLock = false; // Флаг нажатия CapsLock
+
         public MainWindow()
         {
             InitializeComponent();
@@ -105,18 +107,29 @@ namespace Wpf_Keyboard_Trainer
         {
             if (ButtonDictionary.TryGetValue(e.Key.ToString(), out var button))
             {
+                string newText = "";
                 switch (e.Key)
                 {
                     case Key.Space:
-                        InputText.Text += " "; // Исправить
+                        newText = " ";
                         break;
+                    case Key.Back: // Обработка удаления последнего символа
+                        RemoveLastCharacter(InputText); // Метод удаления последнего символа
+                        CompareTexts(); // Метод Обновления сравнения
+                        break;
+                    case Key.RightShift:
                     case Key.LeftShift:
                         ButtonUp();
                         break;
+                    case Key.CapsLock:
+                        ToggleCapsLock(); // Метод индикации нажатия CapsLock
+                        break;
                     default:
-                        InputText.Text += button.TextBlock.Text; // Исправить
+                        newText = button.TextBlock.Text;
                         break;
                 }
+                InsertTextAtCaret(InputText, newText); // Метод вставки символа в строку
+                CompareTexts(); // Метод Обновления сравнения
                 button.Border.Background = Brushes.LightGray;
             }
         }
@@ -154,6 +167,80 @@ namespace Wpf_Keyboard_Trainer
                     ButtonDictionary.Add("Space", new MyButton(line as Border));
                 }
             }
+        }
+
+        private void ToggleCapsLock()
+        {
+            isCapsLock = !isCapsLock;
+            foreach (var key in ButtonDictionary.Keys)
+            {
+                var myButton = ButtonDictionary[key];
+                myButton.TextBlock.Text = isCapsLock ? myButton.BigValue : myButton.SmallValue;
+            }
+        }
+
+        private void InsertTextAtCaret(RichTextBox richTextBox, string text) // Метод вставки символа в строку
+        {
+            TextPointer caretPosition = richTextBox.CaretPosition;
+            richTextBox.CaretPosition.InsertTextInRun(text);
+            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset(text.Length, LogicalDirection.Forward);
+        }
+
+        private void RemoveLastCharacter(RichTextBox richTextBox) // Удаление последнего символа
+        {
+            TextRange textRange = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            string currentText = textRange.Text;
+
+            if (!string.IsNullOrEmpty(currentText))
+            {
+                richTextBox.Document.Blocks.Clear();
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run(currentText.Substring(0, currentText.Length - 1))));
+            }
+        }
+
+        private void CompareTexts() // Окрашивание текста при сравнении
+        {
+            string expectedText = new TextRange(TextValue.Document.ContentStart, TextValue.Document.ContentEnd).Text.Trim();
+            string userText = new TextRange(InputText.Document.ContentStart, InputText.Document.ContentEnd).Text.Trim();
+
+            ResetFormatting(InputText);
+            ResetFormatting(TextValue);
+
+            int minLength = Math.Min(expectedText.Length, userText.Length);
+
+            for (int i = 0; i < minLength; i++)
+            {
+                if (expectedText[i] == userText[i])
+                {
+                    HighlightCharacterAtOffset(InputText, i, Colors.LightGreen);
+                    HighlightCharacterAtOffset(TextValue, i, Colors.LightGreen);
+                }
+                else
+                {
+                    HighlightCharacterAtOffset(InputText, i, Colors.LightCoral);
+                    HighlightCharacterAtOffset(TextValue, i, Colors.LightCoral);
+                }
+            }
+        }
+
+        private void HighlightCharacterAtOffset(RichTextBox rtb, int offset, Color highlightColor) // Окрашивание конкретного символа
+        {
+            TextPointer start = rtb.Document.ContentStart.GetPositionAtOffset(offset, LogicalDirection.Forward);
+            if (start != null)
+            {
+                TextPointer end = start.GetPositionAtOffset(1, LogicalDirection.Forward);
+                if (end != null)
+                {
+                    TextRange charRange = new TextRange(start, end);
+                    charRange.ApplyPropertyValue(TextElement.BackgroundProperty, new SolidColorBrush(highlightColor));
+                }
+            }
+        }
+
+        private void ResetFormatting(RichTextBox rtb) // сброс окрашивания
+        {
+            new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd)
+                .ApplyPropertyValue(TextElement.BackgroundProperty, DependencyProperty.UnsetValue);
         }
     }
 }
