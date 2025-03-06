@@ -49,13 +49,19 @@
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox x:Name="TextValue" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>
-            <TextBox x:Name="InputText" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>
+            <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="5, 2"> <!--В место TextBox-->
+                <RichTextBox x:Name="TextValue" VerticalAlignment="Center" Height="23" FontSize="16" MaxWidth="825" HorizontalAlignment="Stretch" IsReadOnly="True"/>
+            </Border>
+            <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5, 2" > <!--В место TextBox-->
+                <RichTextBox x:Name="InputText" VerticalAlignment="Center" Height="23" FontSize="16" MaxWidth="825" HorizontalAlignment="Stretch" IsReadOnly="True"/>
+            </Border>
+            <!--<TextBox x:Name="TextValue" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>-->
+            <!--<TextBox x:Name="InputText" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="23" FontSize="16" IsEnabled="False"/>-->
         </Grid>
-        <StackPanel Grid.Row="2">
+        <StackPanel x:Name="MainStackPanel" Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="`" FontWeight="Bold"/>
