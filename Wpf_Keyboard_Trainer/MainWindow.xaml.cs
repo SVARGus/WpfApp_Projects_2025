@@ -176,19 +176,20 @@ namespace Wpf_Keyboard_Trainer
                         {
                             switch (myButton.SmallValue)
                             {
-                                case "Shift":
-                                    if (ButtonDictionary.ContainsKey("LeftShift"))
-                                        ButtonDictionary.Add("RightShift", myButton);
-                                    else
-                                        ButtonDictionary.Add("LeftShift", myButton);
+                                case "LeftShift":
+                                    ButtonDictionary.Add("LeftShift", myButton);
                                     break;
+                                case "RightShift":
+                                    ButtonDictionary.Add("RightShift", myButton);
+                                    break;
+                                
                                 case "CapsLock":
                                     ButtonDictionary.Add("CapsLock", myButton);
                                     ButtonDictionary.Add("Capital", myButton);
                                     break;
                                 case "Backspace":
                                     ButtonDictionary.Add("Back", myButton);
-                                    ButtonDictionary.Add("Backspace", myButton);
+                                    //ButtonDictionary.Add("Backspace", myButton);
                                     break;
                                 case "Enter":
                                     ButtonDictionary.Add("Enter", myButton);
@@ -252,22 +253,22 @@ namespace Wpf_Keyboard_Trainer
 
         private void RemoveLastCharacter(RichTextBox richTextBox) // Удаление последнего символа
         {
-            //TextRange textRange = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
-            //string currentText = textRange.Text;
+            if (richTextBox == null || richTextBox.Document == null) return;
+            TextRange fullRange = new TextRange(
+                richTextBox.Document.ContentStart,
+                richTextBox.Document.ContentEnd
+            );
+            string text = fullRange.Text.TrimEnd('\r', '\n');
 
-            //if (!string.IsNullOrEmpty(currentText))
-            //{
-            //    richTextBox.Document.Blocks.Clear();
-            //    richTextBox.Document.Blocks.Add(new Paragraph(new Run(currentText.Substring(0, currentText.Length - 1))));
-            //}
+            if (string.IsNullOrEmpty(text)) 
+                return;
 
-            TextPointer endPosition = richTextBox.Document.ContentEnd;
-            TextPointer startPosition = endPosition.GetNextInsertionPosition(LogicalDirection.Backward);
-            if (startPosition != null)
-            {
-                TextRange range = new TextRange(startPosition, endPosition);
-                range.Text = "";
-            }
+            string newText = text.Substring(0, text.Length - 1);
+
+            InputText.Document.Blocks.Clear();
+            InputText.Document.Blocks.Add(new Paragraph(new Run(newText)));
+
+            richTextBox.CaretPosition = richTextBox.Document.ContentEnd;
         }
 
         private void CompareTexts() // Окрашивание текста при сравнении

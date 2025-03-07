@@ -194,7 +194,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Border CornerRadius="10" Width="134" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Shift" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="LeftShift" FontWeight="Bold"/>
                 </Border>
                 <Border CornerRadius="10" Width="50" Height="50" Margin="3" Background="LightCoral" BorderThickness="2" BorderBrush="Black">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="z" FontWeight="Bold"/>
@@ -227,7 +227,7 @@
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="/" FontWeight="Bold"/>
                 </Border>
                 <Border CornerRadius="10" Width="134" Height="50" Margin="3" Background="#D3D3D3" BorderThickness="2" BorderBrush="Black">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="Shift" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="RightShift" FontWeight="Bold"/>
                 </Border>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
