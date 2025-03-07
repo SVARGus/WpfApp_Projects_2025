@@ -119,7 +119,7 @@ namespace Wpf_Keyboard_Trainer
                         break;
                     case Key.Back: // Обработка удаления последнего символа
                         RemoveLastCharacter(InputText); // Метод удаления последнего символа
-                        CompareTexts(); // Метод Обновления сравнения
+                        NewCompateTexts(); // Метод Обновления сравнения
                         break;
                     case Key.RightShift:
                     case Key.LeftShift:
@@ -142,7 +142,7 @@ namespace Wpf_Keyboard_Trainer
                 if(!string.IsNullOrEmpty(newText))
                 {
                     InsertTextAtCaret(InputText, newText); // Метод вставки символа в строку
-                    CompareTexts(); // Метод Обновления сравнения
+                    NewCompateTexts(); // Метод Обновления сравнения
                 }
                 button.Border.Background = Brushes.Red;
             }
@@ -271,50 +271,108 @@ namespace Wpf_Keyboard_Trainer
             richTextBox.CaretPosition = richTextBox.Document.ContentEnd;
         }
 
-        private void CompareTexts() // Окрашивание текста при сравнении
+        //private void CompareTexts() // Окрашивание текста при сравнении
+        //{
+        //    string expectedText = new TextRange(TextValue.Document.ContentStart, TextValue.Document.ContentEnd).Text.Trim();
+        //    string userText = new TextRange(InputText.Document.ContentStart, InputText.Document.ContentEnd).Text.Trim();
+            
+        //    ResetFormatting(InputText);
+        //    ResetFormatting(TextValue);
+
+        //    int minLength = Math.Min(expectedText.Length, userText.Length);
+
+        //    for (int i = 0; i < minLength; i++)
+        //    {
+        //        if (expectedText[i] == userText[i])
+        //        {
+        //            HighlightCharacterAtOffset(InputText, i, Colors.LightGreen);
+        //            HighlightCharacterAtOffset(TextValue, i, Colors.LightGreen);
+        //        }
+        //        else
+        //        {
+        //            HighlightCharacterAtOffset(InputText, i, Colors.LightCoral);
+        //            HighlightCharacterAtOffset(TextValue, i, Colors.LightCoral);
+        //        }
+        //    }
+        //}
+        private void NewCompateTexts()  // Окрашивание текста при сравнении (переделанный метод)
         {
+            // Копируем текст из строк
             string expectedText = new TextRange(TextValue.Document.ContentStart, TextValue.Document.ContentEnd).Text.Trim();
             string userText = new TextRange(InputText.Document.ContentStart, InputText.Document.ContentEnd).Text.Trim();
 
-            ResetFormatting(InputText);
-            ResetFormatting(TextValue);
+            // Очищаем строки перед обновлением
+            TextValue.Document.Blocks.Clear();
+            InputText.Document.Blocks.Clear();
 
-            int minLength = Math.Min(expectedText.Length, userText.Length);
+            // Создаем новые параграфы куда будем вставлять обработанные символы и окрашенные
+            Paragraph paragraphTextValue = new Paragraph();
+            Paragraph paragraphInputText = new Paragraph();
 
-            for (int i = 0; i < minLength; i++)
+            // Вычисляем длину обрабатываемой строки
+            int maxLength = Math.Max(expectedText.Length, userText.Length);
+
+            for(int i = 0; i < maxLength; ++i)
             {
-                if (expectedText[i] == userText[i])
+                if(i < userText.Length && i < expectedText.Length)
                 {
-                    HighlightCharacterAtOffset(InputText, i, Colors.LightGreen);
-                    HighlightCharacterAtOffset(TextValue, i, Colors.LightGreen);
+                    char ch1 = expectedText[i];
+                    char ch2 = userText[i];
+
+                    // Если символы совпадают, фон зеленый, иначе красный
+                    Brush backgroundBrush = (ch1 == ch2) ? Brushes.LightGreen : Brushes.Red;
+
+                    Run run1 = new Run(ch1.ToString())
+                    {
+                        Background = backgroundBrush
+                    };
+                    Run run2 = new Run(ch2.ToString())
+                    {
+                        Background = backgroundBrush
+                    };
+                    paragraphTextValue.Inlines.Add(run1);
+                    paragraphInputText.Inlines.Add(run2);
+                }
+                else if(userText.Length > expectedText.Length && i < userText.Length)
+                {
+                    char ch2 = userText[i];
+                    Run run2 = new Run(ch2.ToString())
+                    {
+                        Background = Brushes.Red
+                    };
+                    paragraphInputText.Inlines.Add(run2);
                 }
                 else
                 {
-                    HighlightCharacterAtOffset(InputText, i, Colors.LightCoral);
-                    HighlightCharacterAtOffset(TextValue, i, Colors.LightCoral);
+                    char ch1 = expectedText[i];
+                    Run run1 = new Run(ch1.ToString());
+                    paragraphTextValue.Inlines.Add(run1);
                 }
             }
+
+            TextValue.Document.Blocks.Add(paragraphTextValue);
+            InputText.Document.Blocks.Add(paragraphInputText);
         }
 
-        private void HighlightCharacterAtOffset(RichTextBox rtb, int offset, Color highlightColor) // Окрашивание конкретного символа
-        {
-            TextPointer start = rtb.Document.ContentStart.GetPositionAtOffset(offset, LogicalDirection.Forward);
-            if (start != null)
-            {
-                TextPointer end = start.GetPositionAtOffset(1, LogicalDirection.Forward);
-                if (end != null)
-                {
-                    TextRange charRange = new TextRange(start, end);
-                    charRange.ApplyPropertyValue(TextElement.BackgroundProperty, new SolidColorBrush(highlightColor));
-                }
-            }
-        }
+        //private void HighlightCharacterAtOffset(RichTextBox rtb, int offset, Color highlightColor) // Окрашивание конкретного символа
+        //{
+        //    TextPointer start = rtb.Document.ContentStart.GetPositionAtOffset(offset, LogicalDirection.Forward);
+        //    if (start != null)
+        //    {
+        //        TextPointer end = start.GetPositionAtOffset(1, LogicalDirection.Forward);
+        //        if (end != null)
+        //        {
+        //            TextRange charRange = new TextRange(start, end);
+        //            charRange.ApplyPropertyValue(TextElement.BackgroundProperty, new SolidColorBrush(highlightColor));
+        //        }
+        //    }
+        //}
 
-        private void ResetFormatting(RichTextBox rtb) // сброс окрашивания
-        {
-            new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd)
-                .ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Transparent);
-        }
+        //private void ResetFormatting(RichTextBox rtb) // сброс окрашивания
+        //{
+        //    new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd)
+        //        .ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Transparent);
+        //}
 
         private string GetKeyIdentifier(Key key) // Обработка Oem клавиш и получение корректного строкового обозначения для дальнейшей обработки
         {
