@@ -87,7 +87,8 @@ namespace Wpf_Keyboard_Trainer
 
         private void VvodText_KeyUp(object sender, KeyEventArgs e)
         {
-            if (ButtonDictionary.TryGetValue(e.Key.ToString(), out var button))
+            string keyId = GetKeyIdentifier(e.Key);
+            if (ButtonDictionary.TryGetValue(keyId, out var button))
             {
                 button.Border.Background = new SolidColorBrush(button.Color);
                 if (e.Key == Key.LeftShift || e.Key == Key.RightShift)
@@ -107,7 +108,8 @@ namespace Wpf_Keyboard_Trainer
 
         private void VvodText_KeyDown(object sender, KeyEventArgs e)
         {
-            if (ButtonDictionary.TryGetValue(e.Key.ToString(), out var button))
+            string keyId = GetKeyIdentifier(e.Key);
+            if (ButtonDictionary.TryGetValue(keyId, out var button))
             {
                 string newText = "";
                 switch (e.Key)
@@ -132,8 +134,7 @@ namespace Wpf_Keyboard_Trainer
                     case Key.LeftAlt:
                     case Key.RightAlt:
                     case Key.Enter:
-                        button.Border.Background = Brushes.Red;
-                        return;
+                        break;
                     default:
                         newText = button.TextBlock.Text;
                         break;
@@ -183,9 +184,11 @@ namespace Wpf_Keyboard_Trainer
                                     break;
                                 case "CapsLock":
                                     ButtonDictionary.Add("CapsLock", myButton);
+                                    ButtonDictionary.Add("Capital", myButton);
                                     break;
                                 case "Backspace":
                                     ButtonDictionary.Add("Back", myButton);
+                                    ButtonDictionary.Add("Backspace", myButton);
                                     break;
                                 case "Enter":
                                     ButtonDictionary.Add("Enter", myButton);
@@ -223,7 +226,7 @@ namespace Wpf_Keyboard_Trainer
                 }
                 else
                 {
-                    ButtonDictionary.Add("Space", new MyButton(line as Border));
+                    //ButtonDictionary.Add("Space", new MyButton(line as Border));
                 }
             }
         }
@@ -249,13 +252,21 @@ namespace Wpf_Keyboard_Trainer
 
         private void RemoveLastCharacter(RichTextBox richTextBox) // Удаление последнего символа
         {
-            TextRange textRange = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
-            string currentText = textRange.Text;
+            //TextRange textRange = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            //string currentText = textRange.Text;
 
-            if (!string.IsNullOrEmpty(currentText))
+            //if (!string.IsNullOrEmpty(currentText))
+            //{
+            //    richTextBox.Document.Blocks.Clear();
+            //    richTextBox.Document.Blocks.Add(new Paragraph(new Run(currentText.Substring(0, currentText.Length - 1))));
+            //}
+
+            TextPointer endPosition = richTextBox.Document.ContentEnd;
+            TextPointer startPosition = endPosition.GetNextInsertionPosition(LogicalDirection.Backward);
+            if (startPosition != null)
             {
-                richTextBox.Document.Blocks.Clear();
-                richTextBox.Document.Blocks.Add(new Paragraph(new Run(currentText.Substring(0, currentText.Length - 1))));
+                TextRange range = new TextRange(startPosition, endPosition);
+                range.Text = "";
             }
         }
 
@@ -302,6 +313,39 @@ namespace Wpf_Keyboard_Trainer
         {
             new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd)
                 .ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Transparent);
+        }
+
+        private string GetKeyIdentifier(Key key) // Обработка Oem клавиш и получение корректного строкового обозначения для дальнейшей обработки
+        {
+            switch(key)
+            {
+                case Key.Oem3:
+                    return "~"; // прописываем ключи (в нашем случае ключ использован BigValue
+                case Key.OemMinus:
+                    return "_";
+                case Key.OemPlus:
+                    return "+";
+                case Key.OemOpenBrackets:
+                    return "{";
+                case Key.Oem6: // зачастую для закрывающей квадратной скобки
+                    return "}";
+                case Key.Oem1:
+                    return ":";
+                case Key.OemQuotes:
+                    return "\"";
+                case Key.Oem5:
+                    return "|";
+                case Key.OemComma:
+                    return "<";
+                case Key.OemPeriod:
+                    return ">";
+                case Key.Oem2:
+                    return "?";
+                case Key.Space:
+                    return "Space";
+                default:
+                    return key.ToString();
+            }
         }
     }
 }
