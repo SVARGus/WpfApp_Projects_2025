@@ -14,14 +14,23 @@
     </Window.Background>
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Height="300" Background="White" CornerRadius="15" Padding="5" >
+                <DockPanel Margin="2">
+                    <Button DockPanel.Dock="Top" Margin="0, 10">Home</Button>
+                    <Button DockPanel.Dock="Top" Margin="0, 10">Loca</Button>
+                    <Button DockPanel.Dock="Bottom" Margin="0, 10">Clos</Button>
+                    <Button DockPanel.Dock="Bottom" Margin="0, 10">Set</Button>
+                    <TextBlock/>
+                </DockPanel>
+            </Border>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
@@ -32,7 +41,10 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="10" Padding="10">
+                    <Border Grid.Column="0" Background="White" CornerRadius="15" Margin="10,10,10,10" Padding="10" >
+                        
+                    </Border>
+                    <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="10,10,10,10" Padding="10">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -483,190 +495,190 @@
                             <Border Background="White" CornerRadius="15" Padding="10" Margin="5" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" >
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="January 11" FontSize="12" Padding="10, 0"/>
                                             <TextBlock Text="Web" FontSize="25" Padding="10, 0"/>
                                         </StackPanel>
-                                        <TextBlock Width="56" Height="56">
+                                        <Image Width="56" Height="56" Stretch="Uniform">
                                             <!--Тут будет картинка погоды-->
-                                        </TextBlock>
+                                        </Image>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2">
                                         <TextBlock Text="-12,1" FontSize="30" Padding="10, 0"/>
                                         <TextBlock Text="-18" FontSize="20"/>
                                     </StackPanel>
-                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2"/>
+                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
                             <Border Background="White" CornerRadius="15" Padding="10" Margin="5" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" >
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="January 12" FontSize="12" Padding="10, 0"/>
-                                            <TextBlock Text="Thu" FontSize="25" Padding="10, 0"/>
+                                            <TextBlock Text="January 11" FontSize="12" Padding="10, 0"/>
+                                            <TextBlock Text="Web" FontSize="25" Padding="10, 0"/>
                                         </StackPanel>
-                                        <TextBlock Width="56" Height="56">
-                <!--Тут будет картинка погоды-->
-                                        </TextBlock>
+                                        <Image Width="56" Height="56" Stretch="Uniform">
+                                            <!--Тут будет картинка погоды-->
+                                        </Image>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
-                                        <TextBlock Text="-6,5" FontSize="30" Padding="10, 0"/>
-                                        <TextBlock Text="-12,8" FontSize="20"/>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                                        <TextBlock Text="-12,1" FontSize="30" Padding="10, 0"/>
+                                        <TextBlock Text="-18" FontSize="20"/>
                                     </StackPanel>
-                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2"/>
+                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
                             <Border Background="White" CornerRadius="15" Padding="10" Margin="5" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" >
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="January 13" FontSize="12" Padding="10, 0"/>
-                                            <TextBlock Text="Fri" FontSize="25" Padding="10, 0"/>
+                                            <TextBlock Text="January 11" FontSize="12" Padding="10, 0"/>
+                                            <TextBlock Text="Web" FontSize="25" Padding="10, 0"/>
                                         </StackPanel>
-                                        <TextBlock Width="56" Height="56">
-                <!--Тут будет картинка погоды-->
-                                        </TextBlock>
+                                        <Image Width="56" Height="56" Stretch="Uniform">
+                                            <!--Тут будет картинка погоды-->
+                                        </Image>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2">
                                         <TextBlock Text="-12,1" FontSize="30" Padding="10, 0"/>
                                         <TextBlock Text="-18" FontSize="20"/>
                                     </StackPanel>
-                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2"/>
+                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
                             <Border Background="White" CornerRadius="15" Padding="10" Margin="5" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" >
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="January 14" FontSize="12" Padding="10, 0"/>
-                                            <TextBlock Text="Sat" FontSize="25" Padding="10, 0" Foreground="Red"/>
+                                            <TextBlock Text="January 11" FontSize="12" Padding="10, 0"/>
+                                            <TextBlock Text="Web" FontSize="25" Padding="10, 0"/>
                                         </StackPanel>
-                                        <TextBlock Width="56" Height="56">
-                <!--Тут будет картинка погоды-->
-                                        </TextBlock>
+                                        <Image Width="56" Height="56" Stretch="Uniform">
+                                            <!--Тут будет картинка погоды-->
+                                        </Image>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2">
                                         <TextBlock Text="-12,1" FontSize="30" Padding="10, 0"/>
                                         <TextBlock Text="-18" FontSize="20"/>
                                     </StackPanel>
-                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2"/>
+                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
                             <Border Background="White" CornerRadius="15" Padding="10" Margin="5" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" >
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="January 15" FontSize="12" Padding="10, 0"/>
-                                            <TextBlock Text="Sun" FontSize="25" Padding="10, 0" Foreground="Red"/>
+                                            <TextBlock Text="January 11" FontSize="12" Padding="10, 0"/>
+                                            <TextBlock Text="Web" FontSize="25" Padding="10, 0"/>
                                         </StackPanel>
-                                        <TextBlock Width="56" Height="56">
-                <!--Тут будет картинка погоды-->
-                                        </TextBlock>
+                                        <Image Width="56" Height="56" Stretch="Uniform">
+                                            <!--Тут будет картинка погоды-->
+                                        </Image>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2">
                                         <TextBlock Text="-12,1" FontSize="30" Padding="10, 0"/>
                                         <TextBlock Text="-18" FontSize="20"/>
                                     </StackPanel>
-                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2"/>
+                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
                             <Border Background="White" CornerRadius="15" Padding="10" Margin="5" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" >
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="January 16" FontSize="12" Padding="10, 0"/>
-                                            <TextBlock Text="Mon" FontSize="25" Padding="10, 0"/>
+                                            <TextBlock Text="January 11" FontSize="12" Padding="10, 0"/>
+                                            <TextBlock Text="Web" FontSize="25" Padding="10, 0"/>
                                         </StackPanel>
-                                        <TextBlock Width="56" Height="56">
-                <!--Тут будет картинка погоды-->
-                                        </TextBlock>
+                                        <Image Width="56" Height="56" Stretch="Uniform">
+                                            <!--Тут будет картинка погоды-->
+                                        </Image>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2">
                                         <TextBlock Text="-12,1" FontSize="30" Padding="10, 0"/>
                                         <TextBlock Text="-18" FontSize="20"/>
                                     </StackPanel>
-                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2"/>
+                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
                             <Border Background="White" CornerRadius="15" Padding="10" Margin="5" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition Height="2*"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" >
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="January 17" FontSize="12" Padding="10, 0"/>
-                                            <TextBlock Text="Tue" FontSize="25" Padding="10, 0"/>
+                                            <TextBlock Text="January 11" FontSize="12" Padding="10, 0"/>
+                                            <TextBlock Text="Web" FontSize="25" Padding="10, 0"/>
                                         </StackPanel>
-                                        <TextBlock Width="56" Height="56">
-                <!--Тут будет картинка погоды-->
-                                        </TextBlock>
+                                        <Image Width="56" Height="56" Stretch="Uniform">
+                                            <!--Тут будет картинка погоды-->
+                                        </Image>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2">
                                         <TextBlock Text="-12,1" FontSize="30" Padding="10, 0"/>
                                         <TextBlock Text="-18" FontSize="20"/>
                                     </StackPanel>
-                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2"/>
+                                    <TextBlock Grid.Row="2" Text="Overcast" FontSize="10" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -679,6 +691,24 @@
                     </Border>
                 </Grid>
             </Grid>
+        </Grid>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Height="25" Width="25" CornerRadius="25" Background="White" HorizontalAlignment="Left">
+                <Button Content="R" FontSize="16" FontWeight="Bold" Background="Transparent" BorderThickness="0" />
+            </Border>
+            <StackPanel VerticalAlignment="Center" Grid.Column="2" Orientation="Horizontal">
+                <TextBlock Text="Veather forecast" Padding="3"/>
+                <TextBlock Text="January" Padding="3"/>
+                <TextBlock Text="11" Padding="3"/>
+                <TextBlock Text="-" Padding="3"/>
+                <TextBlock Text="January" Padding="3"/>
+                <TextBlock Text="19" Padding="3"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
