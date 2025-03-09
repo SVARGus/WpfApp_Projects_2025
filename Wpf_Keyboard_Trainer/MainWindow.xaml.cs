@@ -62,12 +62,22 @@ namespace Wpf_Keyboard_Trainer
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
             InputText.Document.Blocks.Clear();
+            TextValue.Document.Blocks.Clear();
+            _stopwatch.Reset();
+            failureInputText = 0;
+            CountFails.Text = "0";
+            CountSpeed.Text = "0.00";
+            isCapsLock = false;
+            foreach (var button in ButtonDictionary.Values)
+            {
+                button.Border.Background = new SolidColorBrush(button.Color);
+            }
             //InputText.IsEnabled = true;
             btStart.IsEnabled = false;
             btStop.IsEnabled = true;
             string str = GenerateMixedCaseString(int.Parse(ValueDifficulty.Text));
-            TextValue.Document.Blocks.Clear();
             TextValue.Document.Blocks.Add(new Paragraph(new Run(str)));
+            InputText.IsEnabled = true;
             InputText.Focusable = true;
             InputText.Focus();
             _stopwatch.Start();
@@ -321,7 +331,15 @@ namespace Wpf_Keyboard_Trainer
 
                     // Если символы совпадают, фон зеленый, иначе красный
                     Brush backgroundBrush = (ch1 == ch2) ? Brushes.LightGreen : Brushes.Red;
+                    
+                    // Подсчет ошибок и обновление отображения
+                    if(ch1 != ch2)
+                    {
+                        ++failureInputText;
+                        CountFails.Text = failureInputText.ToString();
+                    }
 
+                    // Запись цвета фона
                     Run run1 = new Run(ch1.ToString())
                     {
                         Background = backgroundBrush
