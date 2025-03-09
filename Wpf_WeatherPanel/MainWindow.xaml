@@ -33,9 +33,14 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="10" Padding="10">
-                        <StackPanel>
-                            <TextBlock Text="Hourly Forecast"/>
-                            <Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Hourly Forecast" Grid.Row="0"/>
+                            <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
@@ -52,7 +57,7 @@
                                 <TextBlock Grid.Column="5" Text="Pasc"/>
                                 <TextBlock Grid.Column="6" Text="Wind"/>
                             </Grid>
-                            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2">
                                 <StackPanel>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
@@ -302,7 +307,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="22:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -319,7 +324,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="23:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -336,7 +341,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="00:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -353,7 +358,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="01:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -370,7 +375,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="02:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -387,7 +392,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="03:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -404,7 +409,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="04:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -421,7 +426,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="05:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -438,7 +443,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="06:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -455,7 +460,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="08:00"/>
+                                        <TextBlock Grid.Column="0" Text="07:00"/>
                                         <TextBlock Grid.Column="2" Text="-5"/>
                                         <TextBlock Grid.Column="3" Text="-11,1"/>
                                         <TextBlock Grid.Column="4" Text="85%"/>
@@ -464,15 +469,14 @@
                                     </Grid>
                                 </StackPanel>
                             </ScrollViewer>
-                        </StackPanel>
-                        
+                        </Grid>
                     </Border>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" >
                         <StackPanel Orientation="Horizontal">
@@ -668,10 +672,10 @@
                         </StackPanel>
                     </ScrollViewer>
                     <Border Height="25" Width="25" CornerRadius="25" Background="White">
-                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text=" { "/>
+                        <Button Content="&lt;" FontSize="16" FontWeight="Bold" Background="Transparent" BorderThickness="0"/>
                     </Border>
                     <Border Grid.Column="2" Height="25" Width="25" CornerRadius="25" Background="White">
-                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text=" } "/>
+                        <Button Content=">" FontSize="16" FontWeight="Bold" Background="Transparent" BorderThickness="0"/>
                     </Border>
                 </Grid>
             </Grid>
