@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorButtonPanel_27.02.25", "ColorButtonPanel_27.02.25\ColorButtonPanel_27.02.25.csproj", "{999C87E7-223B-4DC3-A8F1-A571C303D385}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_Calculator", "Wpf_Calculator\Wpf_Calculator.csproj", "{78000B33-8FF5-4D41-85B5-97FD288C0976}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_CW_21_02_25_Smeshariki", "Wpf_CW_21_02_25_Smeshariki\Wpf_CW_21_02_25_Smeshariki.csproj", "{1666597B-37F2-4D30-9EB6-AA4EDD0CBE96}"
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{999C87E7-223B-4DC3-A8F1-A571C303D385}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78000B33-8FF5-4D41-85B5-97FD288C0976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78000B33-8FF5-4D41-85B5-97FD288C0976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78000B33-8FF5-4D41-85B5-97FD288C0976}.Release|Any CPU.ActiveCfg = Release|Any CPU
