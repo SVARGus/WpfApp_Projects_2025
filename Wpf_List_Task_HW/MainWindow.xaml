@@ -7,6 +7,64 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Text" HorizontalAlignment="Center"
+                       FontSize="40" FontWeight="Bold"/>
+            <TextBlock Text="Text" HorizontalAlignment="Center"
+                       FontSize="15" Foreground="Gray"/>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <DatePicker x:Name="DateSet"/>
+            <TextBox x:Name="SetNameTask" Grid.Column="1"/>
+            <TextBox x:Name="DescriptionTask" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Button Content="Add" Grid.Column="2" Grid.RowSpan="2" Click="Button_Click_NewTask"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="TaskListBox" SelectionChanged="TaskListBox_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding DateTime, StringFormat={}{0:M.d}}" FontSize="15" Margin="0, 0, 0, 5"/>
+                            <TextBlock Text="{Binding Title}" FontSize="15" Margin="5, 0, 0, 0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Grid.Row="1" Content="Delete" Margin="5" Click="Button_Click_Del_Task"/>
+        </Grid>
+        <StackPanel x:Name="TaskPanel" Grid.Row="1" Grid.Column="1">
+            <TextBlock Margin="10" FontSize="15" Text="{Binding Description}"/>
+            <ListBox x:Name="SubTaskListBox" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="100" Margin="20">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsRady, Mode=TwoWay}" Content="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Content="Add" Width="100" Height="30" Click="Button_Click_NewSubTask"/>
+        </StackPanel>
     </Grid>
 </Window>
