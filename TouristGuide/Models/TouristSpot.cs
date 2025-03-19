@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace TouristGuide.Models
 {
@@ -12,7 +13,7 @@ namespace TouristGuide.Models
         public string Name { get; set; } // Название туристической точки (например это может быть Улица, или отдельное здание
         // Позже добавить поле с данными геолокации
         public List<string> PhotoUrsl { get; set; } // Ссылка на фотографию в интернете
-        public List<Image> Photos { get; set; } // Фотографии
+        public List<ImageSource> Photos { get; set; } // Фотографии
         public List<string> VideoUrls { get; set; } // Ссылки на видео в интеренет
         public string Description { get; set; } // Общее описание туристической точки
         public List<string> InterestingFacts { get; set; } // список интересных фактов

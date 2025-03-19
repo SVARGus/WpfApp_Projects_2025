@@ -73,6 +73,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MonthWeather.cs" />
     <Compile Include="Models\TouristSpot.cs" />
+    <Compile Include="Services\DataManager.cs" />
     <Compile Include="Views\Controls\HeaderControl.xaml.cs">
       <DependentUpon>HeaderControl.xaml</DependentUpon>
     </Compile>
@@ -103,19 +104,28 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Images\Flag_of_Russia.svg.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Styles\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\EarthTuristIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\UserIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Africa_%28orthographic_projection%29.svg.png" />
+    <Resource Include="Resources\Images\Antarctica_%28orthographic_projection%29.svg.png" />
+    <Resource Include="Resources\Images\Asia_%28orthographic_projection%29.svg.png" />
+    <Resource Include="Resources\Images\Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png" />
+    <Resource Include="Resources\Images\Location_North_America.svg.png" />
+    <Resource Include="Resources\Images\Oceania_%28orthographic_projection%29.svg.png" />
+    <Resource Include="Resources\Images\South_America_%28orthographic_projection%29.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
