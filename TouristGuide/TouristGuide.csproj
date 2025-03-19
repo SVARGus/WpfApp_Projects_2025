@@ -74,6 +74,7 @@
     <Compile Include="Models\MonthWeather.cs" />
     <Compile Include="Models\TouristSpot.cs" />
     <Compile Include="Services\DataManager.cs" />
+    <Compile Include="Services\MainWindowViewModel.cs" />
     <Compile Include="Views\Controls\HeaderControl.xaml.cs">
       <DependentUpon>HeaderControl.xaml</DependentUpon>
     </Compile>
@@ -126,6 +127,15 @@
     <Resource Include="Resources\Images\Location_North_America.svg.png" />
     <Resource Include="Resources\Images\Oceania_%28orthographic_projection%29.svg.png" />
     <Resource Include="Resources\Images\South_America_%28orthographic_projection%29.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Flag_of_Armenia.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Flag_of_Germany.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Moscow_Kremlin_View_from_Kamennyi_Bridge.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

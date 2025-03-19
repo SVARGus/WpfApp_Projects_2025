@@ -13,6 +13,7 @@ namespace TouristGuide.Services
         public static List<Continent> GetContinents()
         {
             // Тестовая инициализация, позже будет подгрузка из базы данных
+            // При использования JSON файлов теряется перекрестные ссылки и для учитывания перекрестных ссылок потребуется создать кастомный серриализатор + добавить поля в модели, на данный моент не будет реализовываться
             if(Continents == null)
             {
                 List<Continent> newListContinents = new List<Continent>
@@ -50,6 +51,70 @@ namespace TouristGuide.Services
                 Russia.Continents.Add(newListContinents[1]);
                 newListContinents[0].Countries.Add(Russia);
                 newListContinents[1].Countries.Add(Russia);
+                Country Armenia = new Country
+                {
+                    Name = "Армения",
+                    Currency = "армянский драм ֏ (AMD, код 51)",
+                    FlagPhoto = "/Resources/Images/Flag_of_Armenia.svg.png",
+                    GeneralInfo = "Арме́ния (арм. Հայաստանо файле [hɑjɑsˈtɑn]), официальное название — Респу́блика Арме́ния (арм. Հայաստանի Հանրապետություն [hɑjɑstɑˈni hɑnɾɑpɛtuˈtʰjun]) — государство в Закавказье, расположенное на севере Передней Азии, на северо-востоке Армянского нагорья. Выхода к морю не имеет."
+                };
+                Armenia.Continents.Add(newListContinents[0]);
+                newListContinents[0].Countries.Add(Armenia);
+                Country Gemany = new Country
+                {
+                    Name = "Германия",
+                    Currency = "евро (EUR, код 978)",
+                    FlagPhoto = "/Resources/Images/Flag_of_Germany.svg.png",
+                    GeneralInfo = "Герма́ния[10] (нем. Deutschland МФА: [ˈdɔʏtʃlant]о файле), полное официальное название — Федерати́вная Респу́блика Герма́ния (нем. Bundesrepublik Deutschland; аббр. ФРГ, нем. BRD)[11] — государство в Центральной Европе со столицей в Берлине[12]. Площадь территории — 357 684 км²[4]. Численность населения на январь 2023 года — 84,4 млн человек. Занимает 19-е место в мире по численности населения (1-е место в ЕС, при учёте России и Турции 3-е в Европе) и 62-е в мире по территории (8-е в Европе)."
+                };
+                Gemany.Continents.Add(newListContinents[0]);
+                newListContinents[0].Countries.Add(Gemany);
+                MonthWeather TestSum = new MonthWeather
+                {
+                    Mounth = "Лето",
+                    MinTemp = 10,
+                    MaxTemp = 30,
+                    Precipitation = "200 ml",
+                    Description = "Не жарко",
+                };
+                MonthWeather TestWinter = new MonthWeather
+                {
+                    Mounth = "Зима",
+                    MinTemp = -20,
+                    MaxTemp = -5,
+                    Precipitation = "200 ml",
+                    Description = "Не холодно",
+                };
+                MonthWeather TestAutumn = new MonthWeather
+                {
+                    Mounth = "Осень",
+                    MinTemp = -2,
+                    MaxTemp = 10,
+                    Precipitation = "200 ml",
+                    Description = "Сыро",
+                };
+                MonthWeather TestSpring = new MonthWeather
+                {
+                    Mounth = "Весна",
+                    MinTemp = -5,
+                    MaxTemp = 15,
+                    Precipitation = "200 ml",
+                    Description = "Простудно",
+                };
+
+                Location Moscow = new Location
+                {
+                    Name = "Москва",
+                    TimeZone = "UTC+3:00",
+                    Country = Russia
+                };
+                Moscow.Photos.Add("/Resources/Images/Moscow_Kremlin_View_from_Kamennyi_Bridge.jpg");
+                Moscow.Climate.Add(TestWinter);
+                Moscow.Climate.Add(TestSpring);
+                Moscow.Climate.Add(TestSum);
+                Moscow.Climate.Add(TestAutumn);
+                Russia.Locations.Add(Moscow);
+                Continents = newListContinents;
             }
             return Continents;
         }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TouristGuide.Models;
+using TouristGuide.Services;
 
 namespace TouristGuide.Views
 {
@@ -20,6 +22,7 @@ namespace TouristGuide.Views
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }
