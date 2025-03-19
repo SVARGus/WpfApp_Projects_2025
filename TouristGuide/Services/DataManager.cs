@@ -67,8 +67,8 @@ namespace TouristGuide.Services
                     FlagPhoto = "/Resources/Images/Flag_of_Germany.svg.png",
                     GeneralInfo = "Герма́ния[10] (нем. Deutschland МФА: [ˈdɔʏtʃlant]о файле), полное официальное название — Федерати́вная Респу́блика Герма́ния (нем. Bundesrepublik Deutschland; аббр. ФРГ, нем. BRD)[11] — государство в Центральной Европе со столицей в Берлине[12]. Площадь территории — 357 684 км²[4]. Численность населения на январь 2023 года — 84,4 млн человек. Занимает 19-е место в мире по численности населения (1-е место в ЕС, при учёте России и Турции 3-е в Европе) и 62-е в мире по территории (8-е в Европе)."
                 };
-                Gemany.Continents.Add(newListContinents[0]);
-                newListContinents[0].Countries.Add(Gemany);
+                Gemany.Continents.Add(newListContinents[1]);
+                newListContinents[1].Countries.Add(Gemany);
                 MonthWeather TestSum = new MonthWeather
                 {
                     Mounth = "Лето",
