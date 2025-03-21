@@ -4,9 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResumeEditor"
+        xmlns:Control="clr-namespace:ResumeEditor.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Создание резюме" 
+        Height="800" Width="1200"
+        MinHeight="600" MinWidth="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="3" Text="Варианты шаблонов для резюме" FontSize="50"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"/>
+        <Button Grid.Column="0" Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Viewbox>
+                    <Control:FirstResumeForm/>
+                </Viewbox>
+            </ScrollViewer>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Control:SecondResumeForm/>
+            </ScrollViewer>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Control:ThirdResumeForm/>
+            </ScrollViewer>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="2">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Control:FourthResumeForm/>
+            </ScrollViewer>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2">
+            
+        </Button>
+        <Button Grid.Column="2" Grid.Row="2">
+            
+        </Button>
     </Grid>
 </Window>
