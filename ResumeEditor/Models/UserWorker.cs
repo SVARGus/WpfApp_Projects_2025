@@ -75,6 +75,6 @@ namespace ResumeEditor.Models
         // Дополнительные поля
         public string AboutMe { get; set; }
 
-
+        public int NumberForm { get; set; } // Номер выбранной моедели
     }
 }

@@ -55,6 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\ResumeDateEntryFinal.xaml.cs">
+      <DependentUpon>ResumeDateEntryFinal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResumeDateEntryFour.xaml.cs">
+      <DependentUpon>ResumeDateEntryFour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResumeDateEntryOne.xaml.cs">
+      <DependentUpon>ResumeDateEntryOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResumeDateEntryThree.xaml.cs">
+      <DependentUpon>ResumeDateEntryThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResumeDateEntryTwo.xaml.cs">
+      <DependentUpon>ResumeDateEntryTwo.xaml</DependentUpon>
+    </Compile>
     <Page Include="Controls\FirstResumeForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +110,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Styles\StylesFont.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ResumeDateEntryFinal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ResumeDateEntryFour.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ResumeDateEntryOne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ResumeDateEntryThree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ResumeDateEntryTwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\UserWorker.cs" />

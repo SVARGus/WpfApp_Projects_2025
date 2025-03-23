@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Создание резюме" 
         Height="800" Width="1200"
-        MinHeight="600" MinWidth="800">
+        MinHeight="700" MinWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -20,35 +20,38 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.ColumnSpan="3" Text="Варианты шаблонов для резюме" FontSize="50"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"/>
-        <Button Grid.Column="0" Grid.Row="1">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <Viewbox>
-                    <Control:FirstResumeForm/>
-                </Viewbox>
-            </ScrollViewer>
+        <Viewbox Grid.ColumnSpan="3">
+            <TextBlock Text="Создание резюме! Выберите шаблон" FontSize="50" FontWeight="Bold" Background="CadetBlue" Padding="10"/>
+        </Viewbox>
+        <Button Grid.Column="0" Grid.Row="1" x:Name="BtForm1" Click="Button_Click_ResumeForm">
+            <Viewbox>
+                <Control:FirstResumeForm/>
+            </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.Row="1">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Button Grid.Column="1" Grid.Row="1" x:Name="BtForm2" Click="Button_Click_ResumeForm">
+            <Viewbox>
                 <Control:SecondResumeForm/>
-            </ScrollViewer>
+            </Viewbox>
         </Button>
-        <Button Grid.Column="2" Grid.Row="1">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Button Grid.Column="2" Grid.Row="1" x:Name="BtForm3" Click="Button_Click_ResumeForm">
+            <Viewbox>
                 <Control:ThirdResumeForm/>
-            </ScrollViewer>
+            </Viewbox>
         </Button>
-        <Button Grid.Column="0" Grid.Row="2">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Button Grid.Column="0" Grid.Row="2" x:Name="BtForm4" Click="Button_Click_ResumeForm">
+            <Viewbox>
                 <Control:FourthResumeForm/>
-            </ScrollViewer>
+            </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.Row="2">
-            
+        <Button Grid.Column="1" Grid.Row="2" x:Name="BtForm5" Click="Button_Click_ResumeForm">
+            <Viewbox>
+                
+            </Viewbox>
         </Button>
-        <Button Grid.Column="2" Grid.Row="2">
-            
+        <Button Grid.Column="2" Grid.Row="2" x:Name="BtForm6" Click="Button_Click_ResumeForm">
+            <Viewbox>
+
+            </Viewbox>
         </Button>
     </Grid>
 </Window>
