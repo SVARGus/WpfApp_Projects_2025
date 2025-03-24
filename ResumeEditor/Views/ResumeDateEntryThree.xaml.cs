@@ -26,7 +26,19 @@ namespace WPF_Examen_21_03_2025.Views
             worker = userWorker;
             this.DataContext = worker;
             InitializeComponent();
-            this.worker = worker;
+        }
+        private void Button_ClickBack(object sender, RoutedEventArgs e)
+        {
+            ResumeDateEntryTwo resumeDateEntryTwo = new ResumeDateEntryTwo(worker);
+            resumeDateEntryTwo.Show();
+            this.Close();
+        }
+
+        private void Button_ClickLater(object sender, RoutedEventArgs e)
+        {
+            ResumeDateEntryFour resumeDateEntryFour = new ResumeDateEntryFour(worker);
+            resumeDateEntryFour.Show();
+            this.Close();
         }
     }
 }

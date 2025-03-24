@@ -17,9 +17,9 @@ using System.Windows.Shapes;
 namespace ResumeEditor.Controls
 {
     /// <summary>
-    /// Логика взаимодействия для ThirdResumeForm.xaml
+    /// Логика взаимодействия для SixthResumeForm.xaml
     /// </summary>
-    public partial class ThirdResumeForm : UserControl
+    public partial class SixthResumeForm : UserControl
     {
         public UserWorker userWorker = new UserWorker() // тестовые данные
         {
@@ -44,7 +44,7 @@ namespace ResumeEditor.Controls
             EndEducation = new DateTime(2017, 6, 30),
             AboutMe = "Увлекаюсь программированием, изучаю новые технологии и frameworks."
         };
-        public ThirdResumeForm()
+        public SixthResumeForm()
         {
             this.DataContext = userWorker;
             InitializeComponent();

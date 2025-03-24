@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ResumeEditor.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,11 @@ namespace WPF_Examen_21_03_2025.Views
     /// </summary>
     public partial class ResumeDateEntryFinal : Window
     {
-        public ResumeDateEntryFinal()
+        UserWorker worker = new UserWorker();
+        public ResumeDateEntryFinal(UserWorker userWorker)
         {
+            worker = userWorker;
+            this.DataContext = worker;
             InitializeComponent();
         }
     }

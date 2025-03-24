@@ -5,27 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Examen_21_03_2025.Views"
         mc:Ignorable="d"
-        Title="ResumeDateEntryThree" Height="450" Width="600">
+        Title="ResumeDateEntryThree" Height="300" Width="500">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Заполните личные данные"
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Заполните об оброзовании"
                    FontSize="30" FontWeight="Bold"/>
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
+            <TextBlock Text="Учебное заведение" Style="{StaticResource StyleResumeFontTextBlock}"/>
+            <TextBlock Text="Ваше оброзование" Style="{StaticResource StyleResumeFontTextBlock}"/>
+            <TextBlock Text="Факультет" Style="{StaticResource StyleResumeFontTextBlock}"/>
+            <TextBlock Text="Специальность" Style="{StaticResource StyleResumeFontTextBlock}"/>
+            <TextBlock Text="Год окончания" Style="{StaticResource StyleResumeFontTextBlock}" Padding="3"/>
         </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBox Text="{Binding EducationInstitution}" Style="{StaticResource StyleResumeFontTextBox}"/>
+            <TextBox Text="{Binding BasicEducation}" Style="{StaticResource StyleResumeFontTextBox}"/>
+            <TextBox Text="{Binding Faculty}" Style="{StaticResource StyleResumeFontTextBox}"/>
+            <TextBox Text="{Binding Specialitu}" Style="{StaticResource StyleResumeFontTextBox}"/>
+            <DatePicker Text="{Binding EndEducation}" Style="{StaticResource StyleResumeFontDatePicker}"/>
+        </StackPanel>
+        <Button Grid.Column="0" Grid.Row="2" Content="Назад" FontSize="25" Margin="10" Click="Button_ClickBack"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="Далее" FontSize="25" Margin="10" Click="Button_ClickLater"/>
     </Grid>
 </Window>

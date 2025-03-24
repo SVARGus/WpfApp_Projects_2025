@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\FifthResumeForm.xaml.cs">
+      <DependentUpon>FifthResumeForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SixthResumeForm.xaml.cs">
+      <DependentUpon>SixthResumeForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ResumeDateEntryFinal.xaml.cs">
       <DependentUpon>ResumeDateEntryFinal.xaml</DependentUpon>
     </Compile>
@@ -70,6 +76,10 @@
     <Compile Include="Views\ResumeDateEntryTwo.xaml.cs">
       <DependentUpon>ResumeDateEntryTwo.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\FifthResumeForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\FirstResumeForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\SecondResumeForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SixthResumeForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
