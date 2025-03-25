@@ -86,7 +86,7 @@
                 <Image Height="24" Source="/Resources/Image/О_себе.png" Margin="0, 0, 5, 0"/>
                 <TextBlock Text="О себе"/>
             </StackPanel>
-            <TextBlock Text="{Binding AboutMe}" FontSize="16" FontFamily="Arial"/>
+            <TextBlock Text="{Binding AboutMe}" FontSize="16" FontFamily="Arial" TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using ResumeEditor;
+﻿using Microsoft.Win32;
+using ResumeEditor;
 using ResumeEditor.Models;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace WPF_Examen_21_03_2025.Views
     /// </summary>
     public partial class ResumeDateEntryOne : Window
     {
-        UserWorker worker = new UserWorker();
+        private UserWorker worker = new UserWorker();
         public ResumeDateEntryOne(UserWorker userWorker)
         {
             InitializeComponent();
@@ -41,9 +42,50 @@ namespace WPF_Examen_21_03_2025.Views
 
         private void Button_ClickLater(object sender, RoutedEventArgs e)
         {
+            TextBox[] textBoxes = new TextBox[]
+            {
+                SecondName,
+                FirstName,
+                Age,
+                CityResidence,
+                Phone,
+                Email,
+                DesiredPosition,
+                SelectPhoto
+            };
+
+            if(textBoxes.Any(tb=>string.IsNullOrWhiteSpace(tb.Text)))
+            {
+                MessageBox.Show("Заполните все поля перед продолжением!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             ResumeDateEntryTwo resumeDateEntryTwo = new ResumeDateEntryTwo(worker);
             resumeDateEntryTwo.Show();
             this.Close();
+        }
+
+        private void Button_Click_NewResume(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click_SelectPhoto(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
+            if(openFileDialog.ShowDialog() == true)
+            {
+                worker.Photo = openFileDialog.FileName;
+                var binding = BindingOperations.GetBindingExpression(
+                    ((StackPanel)((Button)sender).Parent).Children.OfType<TextBox>().First(),
+                    TextBox.TextProperty);
+                binding?.UpdateTarget();
+
+                PhotoImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
         }
     }
 }

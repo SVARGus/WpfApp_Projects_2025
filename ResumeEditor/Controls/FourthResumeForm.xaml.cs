@@ -28,7 +28,7 @@ namespace ResumeEditor.Controls
             FirstName = "Иван",
             SecondName = "Иванов",
             Age = "36",
-            BirthDay = new DateTime(1990, 5, 15),
+            //BirthDay = new DateTime(1990, 5, 15),
             CityResidence = "Москва",
             Photo = "/Resources/Image/Тестовое фото.png",
 

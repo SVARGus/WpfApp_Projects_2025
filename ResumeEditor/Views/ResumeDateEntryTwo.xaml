@@ -4,10 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Examen_21_03_2025.Views"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="ResumeDateEntryTwo" Height="300" Width="500">
+        Title="ResumeDateEntryTwo" Height="400" Width="500">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -28,14 +30,15 @@ FontSize="30" FontWeight="Bold"/>
             <TextBlock Text="Обязанности" Style="{StaticResource StyleResumeFontTextBlock}"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="10">
-            <TextBox Text="{Binding CompanyWork}" Style="{StaticResource StyleResumeFontTextBox}"/>
-            <TextBox Text="{Binding PositionWork}" Style="{StaticResource StyleResumeFontTextBox}"/>
-            <DatePicker Text="{Binding GettingStartWork}" Style="{StaticResource StyleResumeFontDatePicker}"/>
-            <DatePicker Text="{Binding EndWork}" Style="{StaticResource StyleResumeFontDatePicker}"/>
-            <TextBox Text="{Binding DescriptionLastWork}" Style="{StaticResource StyleResumeFontTextBox}"/>
+            <TextBox x:Name="CompanyWork" Text="{Binding CompanyWork}" Style="{StaticResource StyleResumeFontTextBox}"/>
+            <TextBox x:Name="PositionWork" Text="{Binding PositionWork}" Style="{StaticResource StyleResumeFontTextBox}"/>
+            <DatePicker SelectedDate="{Binding GettingStartWork}" Style="{StaticResource StyleResumeFontDatePicker}"/>
+            <DatePicker SelectedDate="{Binding EndWork}" Style="{StaticResource StyleResumeFontDatePicker}"/>
+            <TextBox x:Name="DescriptionLastWork" Text="{Binding DescriptionLastWork}" Style="{StaticResource StyleResumeFontTextBox}"/>
             
         </StackPanel>
         <Button Grid.Column="0" Grid.Row="2" Content="Назад" FontSize="25" Margin="10" Click="Button_ClickBack"/>
         <Button Grid.Column="1" Grid.Row="2" Content="Далее" FontSize="25" Margin="10" Click="Button_ClickLater"/>
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Создать новое резюме" FontSize="25" Margin="10" Click="Button_Click_NewResume"/>
     </Grid>
 </Window>

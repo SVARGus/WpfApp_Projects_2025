@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Examen_21_03_2025.Views"
         mc:Ignorable="d"
-        Title="ResumeDateEntryFour" Height="300" Width="500">
+        Title="ResumeDateEntryFour" Height="400" Width="500">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -20,8 +21,9 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Расскажите О себе"
 FontSize="30" FontWeight="Bold"/>
         </Viewbox>
-        <TextBox Grid.ColumnSpan="2" Grid.Row="1" Margin="10" Text="{Binding AboutMe}" Height="150"/>
+        <TextBox x:Name="AboutMe" Grid.ColumnSpan="2" Grid.Row="1" Margin="10" Text="{Binding AboutMe}" Height="150" TextWrapping="Wrap"/>
         <Button Grid.Column="0" Grid.Row="2" Content="Назад" FontSize="25" Margin="10" Click="Button_ClickBack"/>
         <Button Grid.Column="1" Grid.Row="2" Content="Далее" FontSize="25" Margin="10" Click="Button_ClickLater"/>
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Создать новое резюме" FontSize="25" Margin="10" Click="Button_Click_NewResume"/>
     </Grid>
 </Window>

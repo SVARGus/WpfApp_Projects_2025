@@ -12,7 +12,7 @@ namespace ResumeEditor.Models
         {
         }
 
-        public UserWorker(string desiredPosition, string firstName, string secondName, string age, DateTime birthDay, string cityResidence, string photo, 
+        public UserWorker(string desiredPosition, string firstName, string secondName, string age, /*DateTime birthDay,*/ string cityResidence, string photo, 
             string phone, string email, 
             string positionWork, string companyWork, DateTime gettingStartWork, DateTime endWork, string descriptionLastWork, 
             string basicEducation, string educationInstitution, string faculty, string specialitu, DateTime endEducation, 
@@ -22,7 +22,7 @@ namespace ResumeEditor.Models
             FirstName = firstName;
             SecondName = secondName;
             Age = Age;
-            BirthDay = birthDay;
+            //BirthDay = birthDay;
             CityResidence = cityResidence;
             Photo = photo;
 
@@ -49,7 +49,7 @@ namespace ResumeEditor.Models
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public string Age { get; set; }
-        public DateTime BirthDay { get; set; }
+        //public DateTime BirthDay { get; set; }
         public string CityResidence { get; set; }
         public string Photo { get; set; }
         

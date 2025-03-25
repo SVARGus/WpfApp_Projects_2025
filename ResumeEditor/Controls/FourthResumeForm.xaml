@@ -94,7 +94,7 @@
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical" Margin="5">
             <TextBlock Text="О себе: " FontSize="18" FontWeight="ExtraLight"/>
-            <TextBlock Text="{Binding AboutMe}" FontSize="18" FontStyle="Italic"/>
+            <TextBlock Text="{Binding AboutMe}" FontSize="18" FontStyle="Italic" TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
 </UserControl>
