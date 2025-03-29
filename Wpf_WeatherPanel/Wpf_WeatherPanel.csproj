@@ -55,6 +55,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\WeatherDataManager.cs" />
+    <Compile Include="Services\YandexWeatherService.cs" />
+    <Page Include="Controls\DailyForecastCarousel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DailyWeatherCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HourlyForecastTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NavigationSidePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WeatherDetailsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +84,21 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\DailyForecastCarousel.xaml.cs">
+      <DependentUpon>DailyForecastCarousel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DailyWeatherCard.xaml.cs">
+      <DependentUpon>DailyWeatherCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HourlyForecastTable.xaml.cs">
+      <DependentUpon>HourlyForecastTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationSidePanel.xaml.cs">
+      <DependentUpon>NavigationSidePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WeatherDetailsPanel.xaml.cs">
+      <DependentUpon>WeatherDetailsPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -74,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\HourlyForecastModel.cs" />
+    <Compile Include="Models\WeatherCodesEnum.cs" />
     <Compile Include="Models\WeatherDay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -102,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Styles\" />
-    <Folder Include="Services\" />
     <Folder Include="Views\Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

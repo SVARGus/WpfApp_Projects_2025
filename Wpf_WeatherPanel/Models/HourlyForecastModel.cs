@@ -8,13 +8,14 @@ namespace Wpf_WeatherPanel.Models
 {
     public class HourlyForecastModel
     {
-        public DateTime Time { get; set; }
-        public float Temperature { get; set; }
-        public float ApparentTemperature { get; set; }
-        public float RelativeHumidity { get; set; }
-        public float SurfasePressure { get; set; }
-        public float WindSpeed { get; set; }
-        public int WindDirection { get; set; }
-        public WeatherCodes Weather { get; set; } // что за WeatherCodes???
+        public DateTime Time { get; set; } // Час
+        public float Temperature { get; set; } // Температура
+        public float ApparentTemperature { get; set; } // Как ощущается температура
+        public float RelativeHumidity { get; set; } // Относительная влажность
+        public float SurfasePressure { get; set; } // Атмосферное давление
+        public float WindSpeed { get; set; } // Скорость ветра
+        public int WindDirection { get; set; } // Направление ветра (градусы)
+        public string WindCardinal { set; get; } // Направление ветра (WE, SW, W и т.д.), можно сделать через enum
+        public WeatherCodes Weather { get; set; } // Код погоды
     }
 }
